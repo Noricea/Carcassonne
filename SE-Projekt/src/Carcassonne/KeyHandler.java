@@ -36,14 +36,25 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+		// Place tile
 		if (e.getButton() == MouseEvent.BUTTON1) {
 
 			int x = (vc.cursorX - vc.offsetX) / vc.tileSize;
 			int y = (vc.cursorY - vc.offsetY) / vc.tileSize;
 
 			if (x >= 0 && x < vc.mapSize && y >= 0 && y < vc.mapSize) {
-				vc.map[x][y] = 1;
+				//Place Tile
+				vc.map[x][y] = vc.map[x][y] < 1 ? vc.tileID : vc.map[x][y];
+				
+				//Check for neighbours here
+				
+				
+				//Assign new tile to mouse
+				vc.tileID =
+						((vc.rand.nextInt(vc.tileTypes) + 1) * 1000) + //North
+						((vc.rand.nextInt(vc.tileTypes) + 1) * 100) + //East
+						((vc.rand.nextInt(vc.tileTypes) + 1) * 10) + //South
+						(vc.rand.nextInt(vc.tileTypes) + 1);        //West
 			}
 		}
 
@@ -51,7 +62,6 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
 
 	}
 

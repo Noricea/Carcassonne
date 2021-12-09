@@ -18,32 +18,27 @@ public class Draw extends JLabel {
 
 		g.setColor(new Color(155, 0, 255));
 
-		//Draw scoreboard
-		
-		
+		// Draw scoreboard
 
-		//Draw map		
-		for(int i = 0; i < vc.mapSize; i++) {
-			for(int j = 0; j < vc.mapSize; j++) {
-				if(vc.map[i][j] > 0) {
+		// Draw map
+		for (int i = 0; i < vc.mapSize; i++) {
+			for (int j = 0; j < vc.mapSize; j++) {
+				if (vc.map[i][j] > 0) {
 					g.setColor(new Color(0, 255, 0));
-					g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize, vc.tileSize);
-				}
-				else {
+					g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize,
+							vc.tileSize);
+				} else {
 					g.setColor(new Color(0, 0, 255));
-					g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize, vc.tileSize);
+					g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize,
+							vc.tileSize);
 				}
 			}
 		}
-		
-		
-		//Draw Player Equipment
+
+		// Draw Player Equipment
 		g.setColor(new Color(120, 0, 255));
-		g.fillRect(
-				(vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize), 
-				(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), 
-				vc.tileSize,
-				vc.tileSize);
+		g.fillRect((vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+				(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), vc.tileSize, vc.tileSize);
 
 		repaint();
 	}
