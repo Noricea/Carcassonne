@@ -22,9 +22,7 @@ public class Draw extends JLabel {
 		
 		
 
-		//Draw map
-		vc.map[5][5] = 40;
-		
+		//Draw map		
 		for(int i = 0; i < vc.mapSize; i++) {
 			for(int j = 0; j < vc.mapSize; j++) {
 				if(vc.map[i][j] > 0) {
@@ -37,6 +35,7 @@ public class Draw extends JLabel {
 				}
 			}
 		}
+		
 		
 		//Draw Player Equipment
 		g.setColor(new Color(120, 0, 255));
