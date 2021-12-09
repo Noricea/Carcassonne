@@ -12,7 +12,7 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		
+
 	}
 
 	@Override
@@ -25,64 +25,64 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getButton() == MouseEvent.BUTTON1) {
-			
+		if (e.getButton() == MouseEvent.BUTTON1) {
+
 			int x = (vc.cursorX - vc.offsetX) / vc.tileSize;
 			int y = (vc.cursorY - vc.offsetY) / vc.tileSize;
-			
-			if(x >= 0 && x < vc.mapSize && y >= 0 && y < vc.mapSize) {
+
+			if (x >= 0 && x < vc.mapSize && y >= 0 && y < vc.mapSize) {
 				vc.map[x][y] = 1;
 			}
 		}
-		
+
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
