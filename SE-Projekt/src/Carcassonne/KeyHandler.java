@@ -13,7 +13,7 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 	@Override
 	public void keyTyped(KeyEvent e) {
 		//
-		
+
 	}
 
 	@Override
@@ -21,21 +21,22 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 		// Move map with WASD
 		vc.offsetX += (vc.moveMod * (e.getKeyCode() == 'A' ? 1 : 0)) - (vc.moveMod * (e.getKeyCode() == 'D' ? 1 : 0));
 		vc.offsetY += (vc.moveMod * (e.getKeyCode() == 'W' ? 1 : 0)) - (vc.moveMod * (e.getKeyCode() == 'S' ? 1 : 0));
-		
-		//Rotate tile with R
-		vc.tileID = ((vc.tileID / 10) + ((vc.tileID % 10) * 1000)) * (e.getKeyCode() == 'R' ? 1 : 0) + (vc.tileID * (e.getKeyCode() == 'R' ? 0 : 1));
-		
+
+		// Rotate tile with R
+		vc.tileID = ((vc.tileID / 10) + ((vc.tileID % 10) * 1000)) * (e.getKeyCode() == 'R' ? 1 : 0)
+				+ (vc.tileID * (e.getKeyCode() == 'R' ? 0 : 1));
+
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// 
+		//
 
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// 
+		//
 
 	}
 
@@ -48,25 +49,23 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 			int y = (vc.cursorY - vc.offsetY) / vc.tileSize;
 
 			if (x >= 0 && x < vc.mapSize && y >= 0 && y < vc.mapSize) {
-				//Place Tile
+				// Place Tile
 				vc.map[x][y] = vc.map[x][y] < 1 ? vc.tileID : vc.map[x][y];
-				
-				//Check for neighbours here NESW
-				vc.score = 
-						(y > 0 ? (( vc.map[x][y] / 1000)		== ((vc.map[x][y - 1] / 10) % 10) ? 1 : 0) : 0) +
-						(x > 0 ? (((vc.map[x][y] / 100) % 10)	== ( vc.map[x - 1][y] % 10) ? 1 : 0) : 0) +
-						(y < vc.mapSize - 1 ? (((vc.map[x][y] / 10) % 10)		== ( vc.map[x][y + 1] / 1000) ? 1 : 0) : 0) +
-						(x < vc.mapSize - 1 ? (( vc.map[x][y] % 10) 			== ((vc.map[x + 1][y] / 100) % 10) ? 1 : 0) : 0);
-				
+
+				// Check for neighbours here NESW
+				vc.score = (y > 0 ? ((vc.map[x][y] / 1000) == ((vc.map[x][y - 1] / 10) % 10) ? 1 : 0) : 0)
+						+ (x > 0 ? (((vc.map[x][y] / 100) % 10) == (vc.map[x - 1][y] % 10) ? 1 : 0) : 0)
+						+ (y < vc.mapSize - 1 ? (((vc.map[x][y] / 10) % 10) == (vc.map[x][y + 1] / 1000) ? 1 : 0) : 0)
+						+ (x < vc.mapSize - 1 ? ((vc.map[x][y] % 10) == ((vc.map[x + 1][y] / 100) % 10) ? 1 : 0) : 0);
+
 				System.out.print(vc.map[x][y] + "\n");
 				System.out.print((vc.map[x][y] / 1000) + "\n");
-				
-				//Assign new tile to mouse
-				vc.tileID =
-						((vc.rand.nextInt(vc.tileTypes) + 1) * 1000) + //North
-						((vc.rand.nextInt(vc.tileTypes) + 1) * 100) + //East
-						((vc.rand.nextInt(vc.tileTypes) + 1) * 10) + //South
-						(vc.rand.nextInt(vc.tileTypes) + 1);        //West
+
+				// Assign new tile to mouse
+				vc.tileID = ((vc.rand.nextInt(vc.tileTypes) + 1) * 1000) + // North
+						((vc.rand.nextInt(vc.tileTypes) + 1) * 100) + // East
+						((vc.rand.nextInt(vc.tileTypes) + 1) * 10) + // South
+						(vc.rand.nextInt(vc.tileTypes) + 1); // West
 			}
 		}
 
@@ -75,36 +74,36 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		//
-		
+
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// 
+		//
 
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// 
+		//
 
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		// 
+		//
 
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		// 
+		//
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// 
+		//
 
 	}
 
