@@ -32,7 +32,7 @@ public class vc {
 	static int period = 100;
 
 	// Tile Informations
-	static int tileID = 0;
+	static int tileID = 1111;
 	static int tileTypes = 4;
 	static int tileSize = 64;
 	

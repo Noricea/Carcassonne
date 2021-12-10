@@ -57,10 +57,7 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 						+ (x > 0 ? (((vc.map[x][y] / 100) % 10) == (vc.map[x - 1][y] % 10) ? 1 : 0) : 0)
 						+ (y < vc.mapSize - 1 ? (((vc.map[x][y] / 10) % 10) == (vc.map[x][y + 1] / 1000) ? 1 : 0) : 0)
 						+ (x < vc.mapSize - 1 ? ((vc.map[x][y] % 10) == ((vc.map[x + 1][y] / 100) % 10) ? 1 : 0) : 0);
-
-				System.out.print(vc.map[x][y] + "\n");
-				System.out.print((vc.map[x][y] / 1000) + "\n");
-
+				
 				// Assign new tile to mouse
 				vc.tileID = ((vc.rand.nextInt(vc.tileTypes) + 1) * 1000) + // North
 						((vc.rand.nextInt(vc.tileTypes) + 1) * 100) + // East
