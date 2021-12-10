@@ -41,7 +41,7 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// Place tile
+		// Place tile LMB
 		if (e.getButton() == MouseEvent.BUTTON1) {
 
 			int x = (vc.cursorX - vc.offsetX) / vc.tileSize;
@@ -51,8 +51,15 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 				//Place Tile
 				vc.map[x][y] = vc.map[x][y] < 1 ? vc.tileID : vc.map[x][y];
 				
-				//Check for neighbours here
+				//Check for neighbours here NESW
+				vc.score = 
+						(y > 0 ? (( vc.map[x][y] / 1000)		== ((vc.map[x][y - 1] / 10) % 10) ? 1 : 0) : 0) +
+						(x > 0 ? (((vc.map[x][y] / 100) % 10)	== ( vc.map[x - 1][y] % 10) ? 1 : 0) : 0) +
+						(y < vc.mapSize - 1 ? (((vc.map[x][y] / 10) % 10)		== ( vc.map[x][y + 1] / 1000) ? 1 : 0) : 0) +
+						(x < vc.mapSize - 1 ? (( vc.map[x][y] % 10) 			== ((vc.map[x + 1][y] / 100) % 10) ? 1 : 0) : 0);
 				
+				System.out.print(vc.map[x][y] + "\n");
+				System.out.print((vc.map[x][y] / 1000) + "\n");
 				
 				//Assign new tile to mouse
 				vc.tileID =

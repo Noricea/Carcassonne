@@ -10,11 +10,12 @@ public class vc {
 
 	// Other
 	static Random rand = new Random();
+	static int score = 0;
 	
 	// JFrame
 	static JFrame frame;
-	static int winWidth = 1920;
-	static int winHeight = 1028;
+	static int winWidth = 720;
+	static int winHeight = 720;
 
 	// Player Position on Map
 	static int viewX = winWidth / 2;
