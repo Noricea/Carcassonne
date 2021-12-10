@@ -12,25 +12,30 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-
+		//
+		
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+		// Move map with WASD
 		vc.offsetX += (vc.moveMod * (e.getKeyCode() == 'A' ? 1 : 0)) - (vc.moveMod * (e.getKeyCode() == 'D' ? 1 : 0));
 		vc.offsetY += (vc.moveMod * (e.getKeyCode() == 'W' ? 1 : 0)) - (vc.moveMod * (e.getKeyCode() == 'S' ? 1 : 0));
+		
+		//Rotate tile with R
+		vc.tileID = ((vc.tileID / 10) + ((vc.tileID % 10) * 1000)) * (e.getKeyCode() == 'R' ? 1 : 0) + (vc.tileID * (e.getKeyCode() == 'R' ? 0 : 1));
+		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+		// 
 
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+		// 
 
 	}
 
@@ -62,36 +67,37 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-
+		//
+		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
+		// 
 
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
+		// 
 
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
+		// 
 
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
+		// 
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		// 
 
 	}
 
