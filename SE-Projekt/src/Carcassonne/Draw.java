@@ -21,7 +21,7 @@ public class Draw extends JLabel {
 
 		try {
 			grassTile = ImageIO.read(new File(
-					"C:\\Users\\noric\\git\\Stellar-Games\\SE-Projekt\\src\\Carcassonne\\sprites\\grassTile.png"));
+					".\\sprites\\grassTile.png"));
 		} catch (IOException e) {
 
 		}
