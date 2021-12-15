@@ -14,7 +14,7 @@ public class vc {
 	
 	// JFrame
 	static JFrame frame;
-	static int winWidth = 720;
+	static int winWidth = 1280;
 	static int winHeight = 720;
 
 	// Player Position on Map

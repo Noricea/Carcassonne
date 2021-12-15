@@ -13,7 +13,7 @@ public class GUI {
 	public GUI() {
 		vc.frame = new JFrame();
 		vc.frame.setSize(vc.winWidth, vc.winHeight);
-		vc.frame.setTitle("Carcasonne");
+		vc.frame.setTitle("Carcassonne");
 		vc.frame.setLayout(null);
 		vc.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		vc.frame.setResizable(false);

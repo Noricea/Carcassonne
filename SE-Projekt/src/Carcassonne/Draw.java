@@ -16,12 +16,12 @@ public class Draw extends JLabel {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		
-		
+
 		BufferedImage grassTile = null;
-		
+
 		try {
-			grassTile = ImageIO.read(new File("C:\\Users\\noric\\git\\Stellar-Games\\SE-Projekt\\src\\Carcassonne\\sprites\\grassTile.png"));
+			grassTile = ImageIO.read(new File(
+					"C:\\Users\\noric\\git\\Stellar-Games\\SE-Projekt\\src\\Carcassonne\\sprites\\grassTile.png"));
 		} catch (IOException e) {
 
 		}
@@ -39,9 +39,13 @@ public class Draw extends JLabel {
 		for (int i = 0; i < vc.mapSize; i++) {
 			for (int j = 0; j < vc.mapSize; j++) {
 				if (vc.map[i][j] > 0) {
-					g.drawImage(grassTile, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
-					//g.setColor(new Color(0, 255, 0));
-					//g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize,vc.tileSize);
+					if (grassTile != null) {
+						g.drawImage(grassTile, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
+					} else {
+						g.setColor(new Color(0, 255, 0));
+						g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize,
+								vc.tileSize);
+					}
 				} else {
 					g.setColor(new Color(0, 0, 255));
 					g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize,
@@ -54,7 +58,7 @@ public class Draw extends JLabel {
 		g.setColor(new Color(120, 0, 255));
 		g.fillRect((vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
 				(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), vc.tileSize, vc.tileSize);
-		
+
 		vc.timer.setRepeats(true);
 		vc.timer.start();
 	}
