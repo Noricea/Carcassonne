@@ -9,11 +9,11 @@ import java.awt.event.MouseEvent;
 import javax.swing.event.MouseInputListener;
 
 public class KeyHandler implements KeyListener, MouseInputListener, ActionListener {
-
+	
 	@Override
 	public void keyTyped(KeyEvent e) {
 		//
-
+		
 	}
 
 	@Override
@@ -25,13 +25,11 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 		// Rotate tile with R
 		vc.tileID = ((vc.tileID / 10) + ((vc.tileID % 10) * 1000)) * (e.getKeyCode() == 'R' ? 1 : 0)
 				+ (vc.tileID * (e.getKeyCode() == 'R' ? 0 : 1));
-
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		//
-
 	}
 
 	@Override

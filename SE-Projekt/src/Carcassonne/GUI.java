@@ -2,8 +2,11 @@ package Carcassonne;
 
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 public class GUI {
 
@@ -24,5 +27,12 @@ public class GUI {
 		draw.setBounds(0, 0, vc.winWidth, vc.winHeight);
 		draw.setVisible(true);
 		vc.frame.add(draw);
+
+		vc.timer = new Timer(1000/vc.fps, new ActionListener() {
+		    public void actionPerformed(ActionEvent event) 
+		    {
+		      draw.repaint();
+		    }
+		});
 	}
 }

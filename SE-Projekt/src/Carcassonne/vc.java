@@ -28,8 +28,8 @@ public class vc {
 	static int cursorY = 0;
 
 	// Refresh Rate
-	static Timer time;
-	static int period = 100;
+	static Timer timer;
+	static int fps = 60;
 
 	// Tile Informations
 	static int tileID = 1111;
