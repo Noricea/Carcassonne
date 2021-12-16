@@ -185,9 +185,87 @@ public class Draw extends JLabel {
 
 		// Draw Player Equipment
 
-		g.setColor(new Color(120, 0, 255));
-		g.fillRect((vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
-				(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), vc.tileSize, vc.tileSize);
+		if (grassTile != null) {
+			g.drawImage(grassTile, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
+
+		} else {
+			g.setColor(new Color(0, 255, 0));
+			g.fillRect((vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), vc.tileSize,
+					vc.tileSize);
+		}
+		switch ((vc.tileID / 1000)) {
+		case 2:
+			g.drawImage(forestTileN, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
+			break;
+		case 3:
+			g.drawImage(fieldTileN, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
+			break;
+		case 4:
+			g.drawImage(villageTileN, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
+			break;
+		default:
+			break;
+		}
+		switch ((vc.tileID / 100) % 10) {
+		case 2:
+			g.drawImage(forestTileE, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize) + 32,
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize),
+					null);
+			break;
+		case 3:
+			g.drawImage(fieldTileE, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize) + 32,
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize),
+					null);
+			break;
+		case 4:
+			g.drawImage(villageTileE, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize) + 32,
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize),
+					null);
+			break;
+		default:
+			break;
+		}
+		switch ((vc.tileID / 10) % 10) {
+		case 2:
+			g.drawImage(forestTileS, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32,
+					null);
+			break;
+		case 3:
+			g.drawImage(fieldTileS, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32,
+					null);
+			break;
+		case 4:
+			g.drawImage(villageTileS, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32,
+					null);
+			break;
+		default:
+			break;
+		}
+		switch ((vc.tileID % 10)) {
+		case 2:
+			g.drawImage(forestTileW, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
+			break;
+		case 3:
+			g.drawImage(fieldTileW, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
+			break;
+		case 4:
+			g.drawImage(villageTileW, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
+			break;
+		default:
+			break;
+		}
+		
 
 		vc.timer.setRepeats(true);
 		vc.timer.start();
