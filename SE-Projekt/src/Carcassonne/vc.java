@@ -11,6 +11,7 @@ public class vc {
 	// Other
 	static Random rand = new Random();
 	static int score = 0;
+	static int scoreModifier = 5;
 	
 	// JFrame
 	static JFrame frame;

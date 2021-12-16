@@ -12,26 +12,94 @@ import javax.swing.JLabel;
 public class Draw extends JLabel {
 
 	protected void paintComponent(Graphics g) {
-		// TODO Auto-generated constructor stub
+
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
+		// Import images from sprites folder
 		BufferedImage grassTile = null;
 
-		try {
-			grassTile = ImageIO.read(new File(
-					".\\sprites\\grassTile.png"));
-		} catch (IOException e) {
+		BufferedImage forestTileN = null;
+		BufferedImage forestTileE = null;
+		BufferedImage forestTileS = null;
+		BufferedImage forestTileW = null;
 
+		BufferedImage fieldTileN = null;
+		BufferedImage fieldTileE = null;
+		BufferedImage fieldTileS = null;
+		BufferedImage fieldTileW = null;
+
+		BufferedImage villageTileN = null;
+		BufferedImage villageTileE = null;
+		BufferedImage villageTileS = null;
+		BufferedImage villageTileW = null;
+
+		// grass tile
+		try {
+			grassTile = ImageIO.read(new File(".\\sprites\\grassTile.png"));
+		} catch (IOException e) {
 		}
 
+		// forest tiles
+		try {
+			forestTileN = ImageIO.read(new File(".\\sprites\\forestTileN.png"));
+		} catch (IOException e) {
+		}
+		try {
+			forestTileE = ImageIO.read(new File(".\\sprites\\forestTileE.png"));
+		} catch (IOException e) {
+		}
+		try {
+			forestTileS = ImageIO.read(new File(".\\sprites\\forestTileS.png"));
+		} catch (IOException e) {
+		}
+		try {
+			forestTileW = ImageIO.read(new File(".\\sprites\\forestTileW.png"));
+		} catch (IOException e) {
+		}
+
+		// field tiles
+		try {
+			fieldTileN = ImageIO.read(new File(".\\sprites\\fieldTileN.png"));
+		} catch (IOException e) {
+		}
+		try {
+			fieldTileE = ImageIO.read(new File(".\\sprites\\fieldTileE.png"));
+		} catch (IOException e) {
+		}
+		try {
+			fieldTileS = ImageIO.read(new File(".\\sprites\\fieldTileS.png"));
+		} catch (IOException e) {
+		}
+		try {
+			fieldTileW = ImageIO.read(new File(".\\sprites\\fieldTileW.png"));
+		} catch (IOException e) {
+		}
+
+		// village tiles
+		try {
+			villageTileN = ImageIO.read(new File(".\\sprites\\villageTileN.png"));
+		} catch (IOException e) {
+		}
+		try {
+			villageTileE = ImageIO.read(new File(".\\sprites\\villageTileE.png"));
+		} catch (IOException e) {
+		}
+		try {
+			villageTileS = ImageIO.read(new File(".\\sprites\\villageTileS.png"));
+		} catch (IOException e) {
+		}
+		try {
+			villageTileW = ImageIO.read(new File(".\\sprites\\villageTileW.png"));
+		} catch (IOException e) {
+		}
+
+		// Get current Cursor Position
 		vc.cursorX = (int) MouseInfo.getPointerInfo().getLocation().x
 				- vc.frame.getContentPane().getLocationOnScreen().x - (vc.offsetX % vc.tileSize);
 		vc.cursorY = (int) MouseInfo.getPointerInfo().getLocation().y
 				- vc.frame.getContentPane().getLocationOnScreen().y - (vc.offsetY % vc.tileSize);
-
-		g.setColor(new Color(155, 0, 255));
 
 		// Draw scoreboard
 
@@ -41,12 +109,73 @@ public class Draw extends JLabel {
 				if (vc.map[i][j] > 0) {
 					if (grassTile != null) {
 						g.drawImage(grassTile, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
+
 					} else {
 						g.setColor(new Color(0, 255, 0));
 						g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize,
 								vc.tileSize);
 					}
+					switch ((vc.map[i][j] / 1000)) {
+					case 2:
+						g.drawImage(forestTileN, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
+						break;
+					case 3:
+						g.drawImage(fieldTileN, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
+						break;
+					case 4:
+						g.drawImage(villageTileN, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
+						break;
+					default:
+						break;
+					}
+					switch ((vc.map[i][j] / 100) % 10) {
+					case 2:
+						g.drawImage(forestTileE, (i * vc.tileSize) + vc.offsetX + 32, (j * vc.tileSize) + vc.offsetY,
+								null);
+						break;
+					case 3:
+						g.drawImage(fieldTileE, (i * vc.tileSize) + vc.offsetX + 32, (j * vc.tileSize) + vc.offsetY,
+								null);
+						break;
+					case 4:
+						g.drawImage(villageTileE, (i * vc.tileSize) + vc.offsetX + 32, (j * vc.tileSize) + vc.offsetY,
+								null);
+						break;
+					default:
+						break;
+					}
+					switch ((vc.map[i][j] / 10) % 10) {
+					case 2:
+						g.drawImage(forestTileS, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY + 32,
+								null);
+						break;
+					case 3:
+						g.drawImage(fieldTileS, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY + 32,
+								null);
+						break;
+					case 4:
+						g.drawImage(villageTileS, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY + 32,
+								null);
+						break;
+					default:
+						break;
+					}
+					switch ((vc.map[i][j] % 10)) {
+					case 2:
+						g.drawImage(forestTileW, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
+						break;
+					case 3:
+						g.drawImage(fieldTileW, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
+						break;
+					case 4:
+						g.drawImage(villageTileW, (i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, null);
+						break;
+					default:
+						break;
+					}
+
 				} else {
+					// Void
 					g.setColor(new Color(0, 0, 255));
 					g.fillRect((i * vc.tileSize) + vc.offsetX, (j * vc.tileSize) + vc.offsetY, vc.tileSize,
 							vc.tileSize);
@@ -55,6 +184,7 @@ public class Draw extends JLabel {
 		}
 
 		// Draw Player Equipment
+
 		g.setColor(new Color(120, 0, 255));
 		g.fillRect((vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
 				(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), vc.tileSize, vc.tileSize);
