@@ -192,8 +192,7 @@ public class Draw extends JLabel {
 		} else {
 			g.setColor(new Color(0, 255, 0));
 			g.fillRect((vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
-					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), vc.tileSize,
-					vc.tileSize);
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), vc.tileSize, vc.tileSize);
 		}
 		switch ((vc.tileID / 1000)) {
 		case 2:
@@ -214,18 +213,15 @@ public class Draw extends JLabel {
 		switch ((vc.tileID / 100) % 10) {
 		case 2:
 			g.drawImage(forestTileE, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize) + 32,
-					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize),
-					null);
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
 			break;
 		case 3:
 			g.drawImage(fieldTileE, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize) + 32,
-					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize),
-					null);
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
 			break;
 		case 4:
 			g.drawImage(villageTileE, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize) + 32,
-					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize),
-					null);
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize), null);
 			break;
 		default:
 			break;
@@ -233,18 +229,15 @@ public class Draw extends JLabel {
 		switch ((vc.tileID / 10) % 10) {
 		case 2:
 			g.drawImage(forestTileS, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
-					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32,
-					null);
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32, null);
 			break;
 		case 3:
 			g.drawImage(fieldTileS, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
-					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32,
-					null);
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32, null);
 			break;
 		case 4:
 			g.drawImage(villageTileS, (vc.cursorX / vc.tileSize) * vc.tileSize + (vc.offsetX % vc.tileSize),
-					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32,
-					null);
+					(vc.cursorY / vc.tileSize) * vc.tileSize + (vc.offsetY % vc.tileSize) + 32, null);
 			break;
 		default:
 			break;
@@ -265,7 +258,11 @@ public class Draw extends JLabel {
 		default:
 			break;
 		}
-		
+
+		// Draw Scoreboard on screen
+		g.setColor(new Color(0, 0, 0));
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 32));
+		g.drawString("Score: " + vc.score, 10, 35);
 
 		vc.timer.setRepeats(true);
 		vc.timer.start();

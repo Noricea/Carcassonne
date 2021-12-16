@@ -62,7 +62,7 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 						((vc.rand.nextInt(vc.tileTypes) + 1) * 10) + // South
 						(vc.rand.nextInt(vc.tileTypes) + 1); // West
 				
-				System.out.print(vc.score + "\n");
+				System.out.print("[" + x + "][" + y + "]" + "\n");
 			}
 		}
 
