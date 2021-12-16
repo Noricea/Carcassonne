@@ -9,11 +9,11 @@ import java.awt.event.MouseEvent;
 import javax.swing.event.MouseInputListener;
 
 public class KeyHandler implements KeyListener, MouseInputListener, ActionListener {
-	
+
 	@Override
 	public void keyTyped(KeyEvent e) {
 		//
-		
+
 	}
 
 	@Override
@@ -43,26 +43,28 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 		// Place tile LMB
 		if (e.getButton() == MouseEvent.BUTTON1) {
 
-			int x = (vc.cursorX - vc.offsetX) / vc.tileSize;
-			int y = (vc.cursorY - vc.offsetY) / vc.tileSize;
+			int x = ((vc.cursorX - vc.offsetX) + (vc.offsetX % vc.tileSize)) / vc.tileSize;
+			int y = ((vc.cursorY - vc.offsetY) + (vc.offsetY % vc.tileSize)) / vc.tileSize;
 
 			if (x >= 0 && x < vc.mapSize && y >= 0 && y < vc.mapSize) {
 				// Place Tile
+				int placed = vc.map[x][y] < 1 ? 1 : 0;
 				vc.map[x][y] = vc.map[x][y] < 1 ? vc.tileID : vc.map[x][y];
 
 				// Check for neighbours here NESW
 				vc.score += ((y > 0 ? ((vc.map[x][y] / 1000) == ((vc.map[x][y - 1] / 10) % 10) ? 1 : 0) : 0)
 						+ (x < vc.mapSize - 1 ? (((vc.map[x][y] / 100) % 10) == (vc.map[x + 1][y] % 10) ? 1 : 0) : 0)
 						+ (y < vc.mapSize - 1 ? (((vc.map[x][y] / 10) % 10) == (vc.map[x][y + 1] / 1000) ? 1 : 0) : 0)
-						+ (x > 0 ? ((vc.map[x][y] % 10) == ((vc.map[x - 1][y] / 100) % 10) ? 1 : 0) : 0)) * vc.scoreModifier;
-				
+						+ (x > 0 ? ((vc.map[x][y] % 10) == ((vc.map[x - 1][y] / 100) % 10) ? 1 : 0) : 0))
+						* vc.scoreModifier;
+
 				// Assign new tile to mouse
-				vc.tileID = ((vc.rand.nextInt(vc.tileTypes) + 1) * 1000) + // North
-						((vc.rand.nextInt(vc.tileTypes) + 1) * 100) + // East
-						((vc.rand.nextInt(vc.tileTypes) + 1) * 10) + // South
-						(vc.rand.nextInt(vc.tileTypes) + 1); // West
-				
-				System.out.print("[" + x + "][" + y + "]" + "\n");
+				if (placed == 1) {
+					vc.tileID = ((vc.rand.nextInt(vc.tileTypes) + 1) * 1000) + // North
+							((vc.rand.nextInt(vc.tileTypes) + 1) * 100) + // East
+							((vc.rand.nextInt(vc.tileTypes) + 1) * 10) + // South
+							(vc.rand.nextInt(vc.tileTypes) + 1); // West
+				}
 			}
 		}
 

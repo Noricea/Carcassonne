@@ -28,7 +28,7 @@ public class vc {
 	static int tileSize = 64;
 
 	// Map stuff
-	static int mapSize = 100;
+	static int mapSize = 200;
 	static int moveMod = 8;
 	static int[][] map = new int[mapSize][mapSize];
 
