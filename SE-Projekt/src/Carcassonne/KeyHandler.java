@@ -52,11 +52,15 @@ public class KeyHandler implements KeyListener, MouseInputListener, ActionListen
 				vc.map[x][y] = vc.map[x][y] < 1 ? vc.tileID : vc.map[x][y];
 
 				// Check for neighbours here NESW
-				vc.score += ((y > 0 ? ((vc.map[x][y] / 1000) == ((vc.map[x][y - 1] / 10) % 10) ? 1 : 0) : 0)
-						+ (x < vc.mapSize - 1 ? (((vc.map[x][y] / 100) % 10) == (vc.map[x + 1][y] % 10) ? 1 : 0) : 0)
-						+ (y < vc.mapSize - 1 ? (((vc.map[x][y] / 10) % 10) == (vc.map[x][y + 1] / 1000) ? 1 : 0) : 0)
-						+ (x > 0 ? ((vc.map[x][y] % 10) == ((vc.map[x - 1][y] / 100) % 10) ? 1 : 0) : 0))
-						* vc.scoreModifier;
+				if (placed == 1) {
+					vc.score += ((y > 0 ? ((vc.map[x][y] / 1000) == ((vc.map[x][y - 1] / 10) % 10) ? 1 : 0) : 0)
+							+ (x < vc.mapSize - 1 ? (((vc.map[x][y] / 100) % 10) == (vc.map[x + 1][y] % 10) ? 1 : 0)
+									: 0)
+							+ (y < vc.mapSize - 1 ? (((vc.map[x][y] / 10) % 10) == (vc.map[x][y + 1] / 1000) ? 1 : 0)
+									: 0)
+							+ (x > 0 ? ((vc.map[x][y] % 10) == ((vc.map[x - 1][y] / 100) % 10) ? 1 : 0) : 0))
+							* vc.scoreModifier;
+				}
 
 				// Assign new tile to mouse
 				if (placed == 1) {

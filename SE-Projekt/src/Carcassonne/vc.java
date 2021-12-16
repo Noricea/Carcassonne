@@ -41,9 +41,4 @@ public class vc {
 
 	static int cursorX = 0;
 	static int cursorY = 0;
-
-	public vc() {
-
-	}
-
 }
