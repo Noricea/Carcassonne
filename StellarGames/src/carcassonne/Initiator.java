@@ -11,5 +11,4 @@ public class Initiator {
 				(VariableContainer.rand.nextInt(VariableContainer.tileTypes) + 1); // West
 		new GUIHandler();
 	}
-
 }
