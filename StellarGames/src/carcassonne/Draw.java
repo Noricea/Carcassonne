@@ -37,61 +37,61 @@ public class Draw extends JLabel {
 
 		// grass tile
 		try {
-			grassTile = ImageIO.read(new File("./sprites/grassTile.png"));
+			grassTile = ImageIO.read(new File("./src/sprites/grassTile.png"));
 		} catch (IOException e) {
 		}
 
 		// forest tiles
 		try {
-			forestTileN = ImageIO.read(new File("./sprites/forestTileN.png"));
+			forestTileN = ImageIO.read(new File("./src/sprites/forestTileN.png"));
 		} catch (IOException e) {
 		}
 		try {
-			forestTileE = ImageIO.read(new File("./sprites/forestTileE.png"));
+			forestTileE = ImageIO.read(new File("./src/sprites/forestTileE.png"));
 		} catch (IOException e) {
 		}
 		try {
-			forestTileS = ImageIO.read(new File("./sprites/forestTileS.png"));
+			forestTileS = ImageIO.read(new File("./src/sprites/forestTileS.png"));
 		} catch (IOException e) {
 		}
 		try {
-			forestTileW = ImageIO.read(new File("./sprites/forestTileW.png"));
+			forestTileW = ImageIO.read(new File("./src/sprites/forestTileW.png"));
 		} catch (IOException e) {
 		}
 
 		// field tiles
 		try {
-			fieldTileN = ImageIO.read(new File("./sprites/fieldTileN.png"));
+			fieldTileN = ImageIO.read(new File("./src/sprites/fieldTileN.png"));
 		} catch (IOException e) {
 		}
 		try {
-			fieldTileE = ImageIO.read(new File("./sprites/fieldTileE.png"));
+			fieldTileE = ImageIO.read(new File("./src/sprites/fieldTileE.png"));
 		} catch (IOException e) {
 		}
 		try {
-			fieldTileS = ImageIO.read(new File("./sprites/fieldTileS.png"));
+			fieldTileS = ImageIO.read(new File("./src/sprites/fieldTileS.png"));
 		} catch (IOException e) {
 		}
 		try {
-			fieldTileW = ImageIO.read(new File("./sprites/fieldTileW.png"));
+			fieldTileW = ImageIO.read(new File("./src/sprites/fieldTileW.png"));
 		} catch (IOException e) {
 		}
 
 		// village tiles
 		try {
-			villageTileN = ImageIO.read(new File("./sprites/villageTileN.png"));
+			villageTileN = ImageIO.read(new File("./src/sprites/villageTileN.png"));
 		} catch (IOException e) {
 		}
 		try {
-			villageTileE = ImageIO.read(new File("./sprites/villageTileE.png"));
+			villageTileE = ImageIO.read(new File("./src/sprites/villageTileE.png"));
 		} catch (IOException e) {
 		}
 		try {
-			villageTileS = ImageIO.read(new File("./sprites/villageTileS.png"));
+			villageTileS = ImageIO.read(new File("./src/sprites/villageTileS.png"));
 		} catch (IOException e) {
 		}
 		try {
-			villageTileW = ImageIO.read(new File("./sprites/villageTileW.png"));
+			villageTileW = ImageIO.read(new File("./src/sprites/villageTileW.png"));
 		} catch (IOException e) {
 		}
 
