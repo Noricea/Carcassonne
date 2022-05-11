@@ -18,82 +18,34 @@ public class Draw extends JLabel {
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 		// Import images from sprites folder
-		BufferedImage grassTile = null;
+				BufferedImage grassTile = null,
+		                     forestTileN = null,  forestTileE = null,  forestTileS = null,  forestTileW = null,
+		                      fieldTileN = null,   fieldTileE = null,   fieldTileS = null,   fieldTileW = null,
+		                     villageTileN = null,villageTileE = null, villageTileS = null, villageTileW = null;
+					
+				try {
+					
+				// grass tile
+			    grassTile = ImageIO.read(new File("./src/sprites/grassTile.png"));
+				
+			    // forest tiles
+		        forestTileN = ImageIO.read(new File("./src/sprites/forestTileN.png"));
+		        forestTileE = ImageIO.read(new File("./src/sprites/forestTileE.png"));
+		        forestTileS = ImageIO.read(new File("./src/sprites/forestTileS.png"));
+		        forestTileW = ImageIO.read(new File("./src/sprites/forestTileW.png"));
 
-		BufferedImage forestTileN = null;
-		BufferedImage forestTileE = null;
-		BufferedImage forestTileS = null;
-		BufferedImage forestTileW = null;
+				// field tiles
+		        fieldTileN = ImageIO.read(new File("./src/sprites/fieldTileN.png"));
+		        fieldTileE = ImageIO.read(new File("./src/sprites/fieldTileE.png"));
+		        fieldTileS = ImageIO.read(new File("./src/sprites/fieldTileS.png"));
+				fieldTileW = ImageIO.read(new File("./src/sprites/fieldTileW.png"));
 
-		BufferedImage fieldTileN = null;
-		BufferedImage fieldTileE = null;
-		BufferedImage fieldTileS = null;
-		BufferedImage fieldTileW = null;
-
-		BufferedImage villageTileN = null;
-		BufferedImage villageTileE = null;
-		BufferedImage villageTileS = null;
-		BufferedImage villageTileW = null;
-
-		// grass tile
-		try {
-			grassTile = ImageIO.read(new File("./src/sprites/grassTile.png"));
-		} catch (IOException e) {
-		}
-
-		// forest tiles
-		try {
-			forestTileN = ImageIO.read(new File("./src/sprites/forestTileN.png"));
-		} catch (IOException e) {
-		}
-		try {
-			forestTileE = ImageIO.read(new File("./src/sprites/forestTileE.png"));
-		} catch (IOException e) {
-		}
-		try {
-			forestTileS = ImageIO.read(new File("./src/sprites/forestTileS.png"));
-		} catch (IOException e) {
-		}
-		try {
-			forestTileW = ImageIO.read(new File("./src/sprites/forestTileW.png"));
-		} catch (IOException e) {
-		}
-
-		// field tiles
-		try {
-			fieldTileN = ImageIO.read(new File("./src/sprites/fieldTileN.png"));
-		} catch (IOException e) {
-		}
-		try {
-			fieldTileE = ImageIO.read(new File("./src/sprites/fieldTileE.png"));
-		} catch (IOException e) {
-		}
-		try {
-			fieldTileS = ImageIO.read(new File("./src/sprites/fieldTileS.png"));
-		} catch (IOException e) {
-		}
-		try {
-			fieldTileW = ImageIO.read(new File("./src/sprites/fieldTileW.png"));
-		} catch (IOException e) {
-		}
-
-		// village tiles
-		try {
-			villageTileN = ImageIO.read(new File("./src/sprites/villageTileN.png"));
-		} catch (IOException e) {
-		}
-		try {
-			villageTileE = ImageIO.read(new File("./src/sprites/villageTileE.png"));
-		} catch (IOException e) {
-		}
-		try {
-			villageTileS = ImageIO.read(new File("./src/sprites/villageTileS.png"));
-		} catch (IOException e) {
-		}
-		try {
-			villageTileW = ImageIO.read(new File("./src/sprites/villageTileW.png"));
-		} catch (IOException e) {
-		}
+				// village tiles
+		        villageTileN = ImageIO.read(new File("./src/sprites/villageTileN.png"));
+		        villageTileE = ImageIO.read(new File("./src/sprites/villageTileE.png"));
+		        villageTileS = ImageIO.read(new File("./src/sprites/villageTileS.png"));
+		        villageTileW = ImageIO.read(new File("./src/sprites/villageTileW.png"));
+				} catch (IOException e) {}
 
 		// Get current Cursor Position
 		VariableContainer.cursorX = (int) MouseInfo.getPointerInfo().getLocation().x
