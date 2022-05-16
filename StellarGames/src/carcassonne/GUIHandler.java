@@ -3,6 +3,7 @@ package carcassonne;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
@@ -20,7 +21,7 @@ public class GUIHandler {
 		VariableContainer.frame.addKeyListener(new KeyHandler());
 		VariableContainer.frame.addMouseListener(new KeyHandler());
 		VariableContainer.frame.requestFocus();
-
+		
 		Draw draw = new Draw();
 		draw.setBounds(0, 0, VariableContainer.winWidth, VariableContainer.winHeight);
 		draw.setVisible(true);
