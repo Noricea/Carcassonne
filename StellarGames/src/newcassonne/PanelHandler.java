@@ -143,7 +143,7 @@ public class PanelHandler extends JPanel {
 				random.nextInt(4); // West
 		tileMap.add(new TileSet(0, 0, 0));
 		positionOnMap = new Vector2D((SCREEN_WIDTH - 64) / 2, (SCREEN_HEIGHT - 64) / 2);
-		
+
 		gDisplay.setCursorTile(cursorTileID);
 		gDisplay.setTileMap(tileMap);
 		gDisplay.setPositionOnMap(positionOnMap);
@@ -225,32 +225,36 @@ public class PanelHandler extends JPanel {
 							|| x == tileMap.get(i).getX() && y == tileMap.get(i).getY() - 1
 							|| x == tileMap.get(i).getX() + 1 && y == tileMap.get(i).getY()
 							|| x == tileMap.get(i).getX() - 1 && y == tileMap.get(i).getY()) {
-						
-						if(x == tileMap.get(i).getX() && y == tileMap.get(i).getY() + 1 && cursorTileID / 1000 == (tileMap.get(i).getId() / 10) % 10) {
+
+						if (x == tileMap.get(i).getX() && y == tileMap.get(i).getY() + 1
+								&& cursorTileID / 1000 == (tileMap.get(i).getId() / 10) % 10) {
 							scoreValue += 5;
 						}
-						if(x == tileMap.get(i).getX() && y == tileMap.get(i).getY() - 1 && (cursorTileID / 10) % 10 == tileMap.get(i).getId() / 1000) {
+						if (x == tileMap.get(i).getX() && y == tileMap.get(i).getY() - 1
+								&& (cursorTileID / 10) % 10 == tileMap.get(i).getId() / 1000) {
 							scoreValue += 5;
 						}
-						if(x == tileMap.get(i).getX() + 1 && y == tileMap.get(i).getY() && cursorTileID % 10 == (tileMap.get(i).getId() / 100) % 10) {
+						if (x == tileMap.get(i).getX() + 1 && y == tileMap.get(i).getY()
+								&& cursorTileID % 10 == (tileMap.get(i).getId() / 100) % 10) {
 							scoreValue += 5;
 						}
-						if(x == tileMap.get(i).getX() - 1 && y == tileMap.get(i).getY() && (cursorTileID / 100) % 10 == tileMap.get(i).getId() % 10) {
+						if (x == tileMap.get(i).getX() - 1 && y == tileMap.get(i).getY()
+								&& (cursorTileID / 100) % 10 == tileMap.get(i).getId() % 10) {
 							scoreValue += 5;
-							
+
 						}
 						adjacent = true;
 					}
 				}
-				
+
 				if (free == true && adjacent == true) {
 					tileMap.add(new TileSet(cursorTileID, x, y));
-					
+
 					cursorTileID = (random.nextInt(4) * 1000) + // North
 							(random.nextInt(4) * 100) + // East
 							(random.nextInt(4) * 10) + // South
 							random.nextInt(4); // West
-					
+
 					score.setText("Score: " + scoreValue);
 					gDisplay.setCursorTile(cursorTileID);
 					gDisplay.setTileMap(tileMap);
@@ -293,9 +297,18 @@ public class PanelHandler extends JPanel {
 			// TODO Auto-generated method stub
 			positionOfCursor.x = e.getPoint().x - (positionOnMap.x % 64);
 			positionOfCursor.y = e.getPoint().y - (positionOnMap.y % 64);
+
+			Vector2D oldPosition = new Vector2D(0, 0);
+
+			System.out.print((((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64) + "\n");
 			gDisplay.setPositionOfCursor(positionOfCursor);
 			// if mouse is on new tile -> refresh
-			repaint();
+			if (((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64 != oldPosition.x || 
+					((positionOfCursor.y - positionOnMap.y) + (positionOnMap.x % 64)) / 64 != oldPosition.y) {
+				oldPosition.x = ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64;
+				oldPosition.y = ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64;
+				repaint();
+			}
 		}
 	}
 }
