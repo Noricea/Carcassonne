@@ -3,12 +3,26 @@ package newcassonne;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-public class PanelHandler extends JPanel implements ActionListener {
+public class PanelHandler extends JPanel {
+	private static final long serialVersionUID = 1L;
+	GameDisplay gDisplay = new GameDisplay();
+	JLabel score = new JLabel("Score: 0");
+
 	static final int SCREEN_WIDTH = 1240;
 	static final int SCREEN_HEIGHT = 720;
-	char direction = 'X';
+
+	static List<TileSet> tileMap = new ArrayList<TileSet>();
+
+	static Vector2D positionOnMap = new Vector2D();
+	static Vector2D positionOfCursor = new Vector2D();
+
+	static int cursorTileID;
+	static int scoreValue;
 
 	Random random;
 
@@ -101,26 +115,50 @@ public class PanelHandler extends JPanel implements ActionListener {
 	}
 
 	public void startGame() {
-		JLabel score = new JLabel("Score: 0");
 		JButton back = new JButton("GO BACK");
 
-		this.setBorder(BorderFactory.createEmptyBorder(20, 100, 100, 100));
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		this.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+		this.setLayout(null);
 
 		score.setFont(new Font("Germania One", Font.BOLD, 24));
 		score.setForeground(Color.WHITE);
+		score.setBounds(20, 20, 500, 20);
+
+		back.setBounds(1100, 20, 120, 40);
+
+		gDisplay.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		gDisplay.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+		gDisplay.setVisible(true);
 
 		this.add(score, BorderLayout.WEST);
 		this.add(back, BorderLayout.EAST);
+		this.add(gDisplay);
+
+		gDisplay.repaint();
+
+		scoreValue = 0;
+		cursorTileID = (random.nextInt(4) * 1000) + // North
+				(random.nextInt(4) * 100) + // East
+				(random.nextInt(4) * 10) + // South
+				random.nextInt(4); // West
+		tileMap.add(new TileSet(0, 0, 0));
+		positionOnMap = new Vector2D((SCREEN_WIDTH - 64) / 2, (SCREEN_HEIGHT - 64) / 2);
+		
+		gDisplay.setCursorTile(cursorTileID);
+		gDisplay.setTileMap(tileMap);
+		gDisplay.setPositionOnMap(positionOnMap);
 
 		this.addKeyListener(new EventHandler());
 		this.addMouseListener(new MouseEventHandler());
+		this.addMouseMotionListener(new MouseEventHandler());
 		back.addActionListener(e -> {
 			this.removeAll();
+			tileMap.clear();
 			this.invalidate();
 			this.validate();
 			showMenu();
 		});
+
 	}
 
 	public class EventHandler extends KeyAdapter {
@@ -129,61 +167,135 @@ public class PanelHandler extends JPanel implements ActionListener {
 			case KeyEvent.VK_A:
 			case KeyEvent.VK_LEFT: {
 				// Move left
+				positionOnMap.x += 8;
 				break;
 			}
 			case KeyEvent.VK_S:
 			case KeyEvent.VK_DOWN: {
 				// Move down
+				positionOnMap.y -= 8;
 				break;
 			}
 			case KeyEvent.VK_D:
 			case KeyEvent.VK_RIGHT: {
 				// Move right
+				positionOnMap.x -= 8;
 				break;
 			}
 			case KeyEvent.VK_W:
 			case KeyEvent.VK_UP: {
 				// Move up
+				positionOnMap.y += 8;
+				break;
+			}
+			case KeyEvent.VK_R: {
+				// Rotate
+				cursorTileID = ((cursorTileID / 10) + ((cursorTileID % 10) * 1000));
+				gDisplay.setCursorTile(cursorTileID);
 				break;
 			}
 			}
+			repaint();
 		}
 	}
 
-	public class MouseEventHandler implements MouseListener {
+	public class MouseEventHandler implements MouseListener, MouseMotionListener {
 		@Override
-		public void mouseClicked(MouseEvent arg0) {
+		public void mouseClicked(MouseEvent e) {
 			// TODO Auto-generated method stub
-			
+			if (e.getButton() == MouseEvent.BUTTON1) {
+				int x = ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64;
+				int y = ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64;
+
+				if ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64) < 0) {
+					x--;
+				}
+				if ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64) < 0) {
+					y--;
+				}
+				// Place Tile
+				boolean free = true;
+				boolean adjacent = false;
+				for (int i = 0; i < tileMap.size(); i++) {
+					if (x == tileMap.get(i).getX() && y == tileMap.get(i).getY()) {
+						free = false;
+						break;
+					}
+					if (x == tileMap.get(i).getX() && y == tileMap.get(i).getY() + 1
+							|| x == tileMap.get(i).getX() && y == tileMap.get(i).getY() - 1
+							|| x == tileMap.get(i).getX() + 1 && y == tileMap.get(i).getY()
+							|| x == tileMap.get(i).getX() - 1 && y == tileMap.get(i).getY()) {
+						
+						if(x == tileMap.get(i).getX() && y == tileMap.get(i).getY() + 1 && cursorTileID / 1000 == (tileMap.get(i).getId() / 10) % 10) {
+							scoreValue += 5;
+						}
+						if(x == tileMap.get(i).getX() && y == tileMap.get(i).getY() - 1 && (cursorTileID / 10) % 10 == tileMap.get(i).getId() / 1000) {
+							scoreValue += 5;
+						}
+						if(x == tileMap.get(i).getX() + 1 && y == tileMap.get(i).getY() && cursorTileID % 10 == (tileMap.get(i).getId() / 100) % 10) {
+							scoreValue += 5;
+						}
+						if(x == tileMap.get(i).getX() - 1 && y == tileMap.get(i).getY() && (cursorTileID / 100) % 10 == tileMap.get(i).getId() % 10) {
+							scoreValue += 5;
+							
+						}
+						adjacent = true;
+					}
+				}
+				
+				if (free == true && adjacent == true) {
+					tileMap.add(new TileSet(cursorTileID, x, y));
+					
+					cursorTileID = (random.nextInt(4) * 1000) + // North
+							(random.nextInt(4) * 100) + // East
+							(random.nextInt(4) * 10) + // South
+							random.nextInt(4); // West
+					
+					score.setText("Score: " + scoreValue);
+					gDisplay.setCursorTile(cursorTileID);
+					gDisplay.setTileMap(tileMap);
+				}
+			}
 		}
 
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void mouseExited(MouseEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void mousePressed(MouseEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		System.out.print(true);
+
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			// TODO Auto-generated method stub
+			positionOfCursor.x = e.getPoint().x - (positionOnMap.x % 64);
+			positionOfCursor.y = e.getPoint().y - (positionOnMap.y % 64);
+			gDisplay.setPositionOfCursor(positionOfCursor);
+			// if mouse is on new tile -> refresh
+			repaint();
+		}
 	}
 }

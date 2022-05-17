@@ -1,4 +1,4 @@
-package carcassonne;
+package oldcassonne;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
