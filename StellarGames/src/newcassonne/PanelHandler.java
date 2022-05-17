@@ -4,13 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import oldcassonne.VariableContainer;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class PanelHandler extends JPanel {
+	private static final long serialVersionUID = 1L;
 	GameDisplay gDisplay = new GameDisplay();
 	JLabel score = new JLabel("Score: 0");
 
@@ -21,7 +20,6 @@ public class PanelHandler extends JPanel {
 
 	static Vector2D positionOnMap = new Vector2D();
 	static Vector2D positionOfCursor = new Vector2D();
-	static Vector2D positionOfPlaceableTile = new Vector2D();
 
 	static int cursorTileID;
 	static int scoreValue;

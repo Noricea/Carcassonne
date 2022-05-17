@@ -12,17 +12,15 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
-import oldcassonne.VariableContainer;
-
 public class GameDisplay extends JLabel {
-
+	private static final long serialVersionUID = 1L;
+	
 	List<BufferedImage> Image = new ArrayList<BufferedImage>();
 	List<TileSet> tileMap = new ArrayList<TileSet>();
 	int cursorTile;
 
 	Vector2D positionOnMap = new Vector2D();
 	Vector2D positionOfCursor = new Vector2D();
-	Vector2D positionOfPlaceableTile = new Vector2D();
 
 	GameDisplay() {
 		// Import images from sprites folder
@@ -125,9 +123,5 @@ public class GameDisplay extends JLabel {
 
 	public void setPositionOfCursor(Vector2D positionOfCursor) {
 		this.positionOfCursor = positionOfCursor;
-	}
-
-	public void setPositionOfPlaceableTile(Vector2D positionOfPlaceableTile) {
-		this.positionOfPlaceableTile = positionOfPlaceableTile;
 	}
 }
