@@ -12,6 +12,12 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 
+/**
+ * All graphical components that are not GUI are created here. 
+ * @author Lisa
+ *
+ */
+
 public class GameDisplay extends JLabel {
 	private static final long serialVersionUID = 1L;
 	
@@ -22,8 +28,12 @@ public class GameDisplay extends JLabel {
 	Vector2D positionOnMap = new Vector2D();
 	Vector2D positionOfCursor = new Vector2D();
 
+	
+	/**
+	 * Imports the necessary sprites for the various tiles.
+	 */
+	 
 	GameDisplay() {
-		// Import images from sprites folder
 		try {
 			for (int i = 0; i <= 12; i++) {
 				Image.add(ImageIO.read(new File("./src/sprites/" + i + ".png")));
@@ -32,13 +42,16 @@ public class GameDisplay extends JLabel {
 		}
 
 	}
+	
+	/**
+	 * Creates all tiles.
+	 */
 
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-		// Displaying all placed tiles
 		for (int i = 0; i < tileMap.size(); i++) {
 			g.drawImage(Image.get(0), (tileMap.get(i).getX() * Image.get(0).getHeight()) + positionOnMap.x,
 					(tileMap.get(i).getY() * Image.get(0).getWidth()) + positionOnMap.y, null);
@@ -67,8 +80,12 @@ public class GameDisplay extends JLabel {
 						(tileMap.get(i).getY() * Image.get(0).getWidth()) + positionOnMap.y, null);
 			}
 		}
-
-		// Displaying cursor tile
+		
+		
+		/**
+		 *  Displays the Tile that the player can place.
+		 */
+		 
 		g.drawImage(Image.get(0),
 				(positionOfCursor.x / Image.get(0).getHeight()) * Image.get(0).getHeight()
 						+ (positionOnMap.x % Image.get(0).getHeight()),

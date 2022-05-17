@@ -4,6 +4,12 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
+/**
+ * Creates the main frame for the game.
+ * @author Lisa
+ *
+ */
+
 public class FrameHandler extends JFrame {
 	private static final long serialVersionUID = 1L;
 

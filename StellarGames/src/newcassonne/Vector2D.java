@@ -1,5 +1,11 @@
 package newcassonne;
 
+/**
+ * Saves two values for the mouse position and the map position.
+ * @author Lisa
+ *
+ */
+
 public class Vector2D {
 	public int x;
 	public int y;
