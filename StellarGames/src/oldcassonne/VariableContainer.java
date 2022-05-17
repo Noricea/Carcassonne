@@ -1,4 +1,4 @@
-package carcassonne;
+package oldcassonne;
 
 import javax.swing.JFrame;
 import javax.swing.Timer;

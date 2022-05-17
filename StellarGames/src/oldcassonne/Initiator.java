@@ -1,4 +1,4 @@
-package carcassonne;
+package oldcassonne;
 
 public class Initiator {
 
