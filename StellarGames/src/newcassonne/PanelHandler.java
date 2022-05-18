@@ -19,6 +19,9 @@ public class PanelHandler extends JPanel {
 	GameDisplay gDisplay = new GameDisplay();
 	JLabel score = new JLabel("Score: 0");
 
+	/**
+	 * Sets the Windows dimensions. The Window is not resizable. 
+	 */
 	static final int SCREEN_WIDTH = 1240;
 	static final int SCREEN_HEIGHT = 720;
 
@@ -32,6 +35,9 @@ public class PanelHandler extends JPanel {
 
 	Random random;
 
+	/**
+	 * Creates the frame.
+	 */
 	PanelHandler() {
 		random = new Random();
 		this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -125,7 +131,7 @@ public class PanelHandler extends JPanel {
 
 	/**
 	 * Method for starting the Game.
-	 * @param back Creates the button for going back to the menu.
+	 * @param back Creates the button "Go Back" so the player can return to the main menu.
 	 */
 	public void startGame() {
 		JButton back = new JButton("GO BACK");
