@@ -101,7 +101,15 @@ public class PanelHandler extends JPanel {
 		sb.append("<br>");
 		sb.append("Over time, you will create a unique world, spaning over hundreds of tiles");
 		sb.append("<br>");
-		sb.append("");
+		sb.append("<br>");
+		sb.append("Controls:");
+		sb.append("<br>");
+		sb.append("LMB to place tiles.");
+		sb.append("<br>");
+		sb.append("R to rotate tiles.");
+		sb.append("<br>");
+		sb.append("WASD to move around the map.");
+		sb.append("<br>");
 		sb.append("<br>");
 		sb.append("The rules are as follows:");
 		sb.append("<br>");
@@ -110,6 +118,7 @@ public class PanelHandler extends JPanel {
 		sb.append("2. Place tiles with similar terrain to gain points");
 		sb.append("<br>");
 		sb.append("3. Have fun!");
+		sb.append("<br>");
 		sb.append("</html>");
 
 		header.setFont(new Font("Germania One", Font.BOLD, 64));

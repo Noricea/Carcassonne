@@ -135,6 +135,12 @@ public class GameDisplay extends JLabel {
 								+ (positionOnMap.y % Image.get(0).getWidth()),
 						null);
 			}
+		} else {
+			// Void
+			System.out.print("No sprites found\n");
+			g.setColor(new Color(0, 255, 0));
+			g.fillRect((positionOfCursor.x / 64 * 64) + positionOnMap.x % 64, (positionOfCursor.y / 64 * 64) + positionOnMap.y % 64,
+					64, 64);
 		}
 	}
 
