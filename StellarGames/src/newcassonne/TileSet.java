@@ -1,5 +1,11 @@
 package newcassonne;
 
+/**
+ * Saves the relevant values for a Tile field like its position and ID.
+ * @author Lisa
+ * @param id To differentiate between the different tiles.
+ */
+
 public class TileSet {
 	private int id;
 	private int x;

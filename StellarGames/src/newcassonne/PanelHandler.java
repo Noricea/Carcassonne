@@ -8,11 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Processes the panel and does calculations for the game.
+ * 
+ * @author Lisa
+ *
+ */
+
 public class PanelHandler extends JPanel {
 	private static final long serialVersionUID = 1L;
 	GameDisplay gDisplay = new GameDisplay();
 	JLabel score = new JLabel("Score: 0");
 
+	/**
+	 * Sets the Windows dimensions. The Window is not resizable.
+	 */
 	static final int SCREEN_WIDTH = 1240;
 	static final int SCREEN_HEIGHT = 720;
 
@@ -26,6 +36,9 @@ public class PanelHandler extends JPanel {
 
 	Random random;
 
+	/**
+	 * Creates the frame.
+	 */
 	PanelHandler() {
 		random = new Random();
 		this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -69,6 +82,9 @@ public class PanelHandler extends JPanel {
 		});
 	}
 
+	/**
+	 * This is for showing the player the rules of the game.
+	 */
 	public void showHelp() {
 		JLabel header = new JLabel("Carcassonne");
 		JLabel info = new JLabel("Filler Buster");
@@ -114,6 +130,12 @@ public class PanelHandler extends JPanel {
 		});
 	}
 
+	/**
+	 * Method for starting the Game.
+	 * 
+	 * @param back Creates the button "Go Back" so the player can return to the main
+	 *             menu.
+	 */
 	public void startGame() {
 		JButton back = new JButton("GO BACK");
 
@@ -161,6 +183,13 @@ public class PanelHandler extends JPanel {
 
 	}
 
+	/**
+	 * This is for moving the map if the space for the placed tiles is getting very
+	 * small.
+	 * 
+	 * @author Lisa
+	 *
+	 */
 	public class EventHandler extends KeyAdapter {
 		public void keyPressed(KeyEvent e) {
 			switch (e.getKeyCode()) {
@@ -199,10 +228,14 @@ public class PanelHandler extends JPanel {
 		}
 	}
 
+	/**
+	 * This is for placing the tiles on the map via mouse click.
+	 * 
+	 * @author Lisa
+	 *
+	 */
 	public class MouseEventHandler implements MouseListener, MouseMotionListener {
-		@Override
 		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
 			if (e.getButton() == MouseEvent.BUTTON1) {
 				int x = ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64;
 				int y = ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64;
@@ -292,19 +325,26 @@ public class PanelHandler extends JPanel {
 
 		}
 
+		/**
+		 * Method to refresh the Frame whenever the mouse is hovering over a new tile.
+		 */
+
 		@Override
 		public void mouseMoved(MouseEvent e) {
-			// TODO Auto-generated method stub
 			positionOfCursor.x = e.getPoint().x - (positionOnMap.x % 64);
 			positionOfCursor.y = e.getPoint().y - (positionOnMap.y % 64);
 
 			Vector2D oldPosition = new Vector2D(0, 0);
-
-			System.out.print((((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64) + "\n");
 			gDisplay.setPositionOfCursor(positionOfCursor);
+
 			// if mouse is on new tile -> refresh
-			if (((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64 != oldPosition.x || 
-					((positionOfCursor.y - positionOnMap.y) + (positionOnMap.x % 64)) / 64 != oldPosition.y) {
+			if ((((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64)
+					- ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64) < 0 ? 1 : 0) != oldPosition.x
+					|| (((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64)
+							- ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64) < 0 ? 1
+									: 0) != oldPosition.y
+					|| ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64 == 0
+							&& ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64 == 0) {
 				oldPosition.x = ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64;
 				oldPosition.y = ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64;
 				repaint();
