@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 /**
  * Creates the main frame for the game.
- * @author Lisa
+ * @author Noricia
  *
  */
 
