@@ -51,6 +51,7 @@ public class PanelHandler extends JPanel {
 		JLabel header = new JLabel("Carcassonne");
 		JButton play = new JButton("PLAY GAME");
 		JButton help = new JButton("HELP");
+		JButton about = new JButton("ABOUT");
 		JButton exit = new JButton("EXIT GAME");
 
 		this.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
@@ -63,6 +64,7 @@ public class PanelHandler extends JPanel {
 		this.add(header);
 		this.add(play);
 		this.add(help);
+		this.add(about);
 		this.add(exit);
 
 		play.addActionListener(e -> {
@@ -76,6 +78,12 @@ public class PanelHandler extends JPanel {
 			this.invalidate();
 			this.validate();
 			showHelp();
+		});
+		about.addActionListener(e -> {
+			this.removeAll();
+			this.invalidate();
+			this.validate();
+			showAbout();
 		});
 		exit.addActionListener(e -> {
 			System.exit(0);
@@ -139,6 +147,55 @@ public class PanelHandler extends JPanel {
 		});
 	}
 
+	public void showAbout() {
+		JLabel header = new JLabel("About");
+		JLabel info = new JLabel("Filler Buster");
+		JButton back = new JButton("GO BACK");
+
+		this.setBorder(BorderFactory.createEmptyBorder(20, 100, 100, 100));
+		this.setLayout(new GridLayout(0, 1));
+
+		StringBuilder sb = new StringBuilder();
+		sb.append("<html>");
+		sb.append("Stellar Games ist ein unabhängiger Spieleentwickler,");
+		sb.append("<br>");
+		sb.append("welcher sich in Mobile Games und anderen diversen Spieleanwendungen spezialisiert hat.");
+		sb.append("<br>");
+		sb.append("Im Betrieb befinden sich derzeit 5 Mitarbeiter.");
+		sb.append("<br>");
+		sb.append("<br>");
+		sb.append("Credits:");
+		sb.append("<br>");
+		sb.append("Projektleiter*in: Lisa Hauptvogel");
+		sb.append("<br>");
+		sb.append("Dokumentation: Mariia Würtz");
+		sb.append("<br>");
+		sb.append("Dokumentation: Lloyd König");
+		sb.append("<br>");
+		sb.append("Versionierung: Dmitrij Kolosov");
+		sb.append("<br>");
+		sb.append("Programmierer*in: Noricia Matschuck");
+		sb.append("<br>");
+		sb.append("</html>");
+
+		header.setFont(new Font("Germania One", Font.BOLD, 64));
+		header.setForeground(Color.WHITE);
+
+		info.setText(sb.toString());
+		info.setForeground(Color.WHITE);
+
+		this.add(header);
+		this.add(info);
+		this.add(back);
+
+		back.addActionListener(e -> {
+			this.removeAll();
+			this.invalidate();
+			this.validate();
+			showMenu();
+		});
+	}
+	
 	/**
 	 * Method for starting the Game.
 	 * 
