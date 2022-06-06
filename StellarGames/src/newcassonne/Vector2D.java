@@ -3,7 +3,8 @@ package newcassonne;
 /**
  * Saves two values for the mouse position and the map position.
  * @author Lisa
- *
+ * @param x The x-coordinates of the mouse.
+ * @param y The y-coordinates of the mouse.
  */
 
 public class Vector2D {

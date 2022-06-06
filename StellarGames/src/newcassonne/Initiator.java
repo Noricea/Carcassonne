@@ -2,7 +2,7 @@ package newcassonne;
 
 /**
  * The initiator class starts the game.
- * @author Lisa
+ * @author Noricia
  *
  */
 
