@@ -1,4 +1,4 @@
-package newcassonne;
+package carcassonne;
 
 import java.awt.*;
 import java.awt.event.*;

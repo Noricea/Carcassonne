@@ -1,4 +1,4 @@
-package newcassonne;
+package carcassonne;
 
 /**
  * Saves the relevant values for a Tile field like its position and ID.

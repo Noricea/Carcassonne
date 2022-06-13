@@ -1,4 +1,4 @@
-package newcassonne;
+package carcassonne;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -12,8 +12,6 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
-
-import oldcassonne.VariableContainer;
 
 /**
  * All graphical components that are not GUI are created here.

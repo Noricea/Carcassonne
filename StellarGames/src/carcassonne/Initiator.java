@@ -1,4 +1,4 @@
-package newcassonne;
+package carcassonne;
 
 /**
  * The initiator class starts the game.

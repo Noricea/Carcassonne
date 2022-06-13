@@ -1,4 +1,4 @@
-package newcassonne;
+package carcassonne;
 
 /**
  * Saves two values for the mouse position and the map position.
