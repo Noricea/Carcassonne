@@ -177,7 +177,7 @@ public class PanelHandler extends JPanel {
 		textString.append("<br>");
 		textString.append("Dokumentation: Mariia Wuertz");
 		textString.append("<br>");
-		textString.append("Dokumentation: Lloyd Koenig");
+		textString.append("Design: Lloyd Koenig");
 		textString.append("<br>");
 		textString.append("Versionierung: Dmitrij Kolosov");
 		textString.append("<br>");
@@ -367,7 +367,10 @@ public class PanelHandler extends JPanel {
 				}
 			}
 		}
-
+		
+		/**
+		 * Functions that we have to implement, but do not use.
+		 */
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
 			// TODO Auto-generated method stub
