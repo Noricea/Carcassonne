@@ -46,8 +46,15 @@ public class PanelHandler extends JPanel {
 		this.setFocusable(true);
 		showMenu();
 	}
-
+	
+	/**
+	 * Creates the menu.
+	 */
+	
 	public void showMenu() {
+		/**
+		 * Creates the buttons for the menu.
+		 */
 		JLabel header = new JLabel("Carcassonne");
 		JButton play = new JButton("PLAY GAME");
 		JButton help = new JButton("HELP");
