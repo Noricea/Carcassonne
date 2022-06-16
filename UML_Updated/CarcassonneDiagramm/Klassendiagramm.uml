@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_44jusO1jEeycBJtT1W2JFQ" name="Carcassonne">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_49DNIO1jEeycBJtT1W2JFQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_84bgwO1nEey8sKoZGmg3BA" name="Carcassonne">
+      <packagedElement xmi:type="uml:Package" xmi:id="_85aYMO1nEey8sKoZGmg3BA" name="Carcassonne">
+        <packagedElement xmi:type="uml:Class" xmi:id="_85c0cO1nEey8sKoZGmg3BA" name="FrameHandler" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_86xDEO1nEey8sKoZGmg3BA" general="_85eCku1nEey8sKoZGmg3BA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_87CI0O1nEey8sKoZGmg3BA" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" type="_87A6sO1nEey8sKoZGmg3BA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_87D-AO1nEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_87NvAO1nEey8sKoZGmg3BA" name="FrameHandler" specification="_87IPcO1nEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.add(new PanelHandler(), BorderLayout.CENTER);&#xD;
+    this.setTitle(&quot;Carcassonne&quot;);&#xD;
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#xD;
+    this.setResizable(false);&#xD;
+    this.pack();&#xD;
+    this.setLocationRelativeTo(null);&#xD;
+    this.setVisible(true);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_87IPcO1nEey8sKoZGmg3BA" name="FrameHandler" visibility="private" method="_87NvAO1nEey8sKoZGmg3BA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_CLLMwO1oEey8sKoZGmg3BA" name="GameDisplay" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_CLQFQO1oEey8sKoZGmg3BA" general="_CLLz0O1oEey8sKoZGmg3BA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CLQsUO1oEey8sKoZGmg3BA" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" type="_87A6sO1nEey8sKoZGmg3BA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_CLR6cO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CLYoIO1oEey8sKoZGmg3BA" name="imageList" visibility="private" type="_CLU9wO1oEey8sKoZGmg3BA" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CLZ2QO1oEey8sKoZGmg3BA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CLadUO1oEey8sKoZGmg3BA" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_CLbEYO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;BufferedImage>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CLf84O1oEey8sKoZGmg3BA" name="tileMap" visibility="private" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CLgj8O1oEey8sKoZGmg3BA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CLhLAO1oEey8sKoZGmg3BA" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_CLhyEO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;TileSet>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CLjAMO1oEey8sKoZGmg3BA" name="cursorTile" visibility="private" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CLmqkO1oEey8sKoZGmg3BA" name="positionOnMap" visibility="private" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_CLn4sO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Vector2D()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CLpG0O1oEey8sKoZGmg3BA" name="positionOfCursor" visibility="private" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_CLpt4O1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Vector2D()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_CLtYQO1oEey8sKoZGmg3BA" name="GameDisplay" specification="_CLqU8O1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    try {&#xD;
+        for (int i = 0; i &lt;= 12; i++) {&#xD;
+            imageList.add(ImageIO.read(new File(&quot;./src/sprites/&quot; + i + &quot;.png&quot;)));&#xD;
+        }&#xD;
+    } catch (IOException e) {&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_CL0F8O1oEey8sKoZGmg3BA" name="paintComponent" specification="_CLxpsO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    super.paintComponent(g);&#xD;
+    Graphics2D g2D = (Graphics2D) g;&#xD;
+    g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);&#xD;
+    for (int i = 0; i &lt; tileMap.size(); i++) {&#xD;
+        if (imageList.size() > 0) {&#xD;
+            g.drawImage(imageList.get(0), (tileMap.get(i).getX() * imageList.get(0).getHeight()) + positionOnMap.x, (tileMap.get(i).getY() * imageList.get(0).getWidth()) + positionOnMap.y, null);&#xD;
+            if (tileMap.get(i).getId() / 1000 != 0) {&#xD;
+                g.drawImage(imageList.get(tileMap.get(i).getId() / 1000 * 4 - 3), (tileMap.get(i).getX() * imageList.get(0).getHeight()) + positionOnMap.x, (tileMap.get(i).getY() * imageList.get(0).getWidth()) + positionOnMap.y, null);&#xD;
+            }&#xD;
+            if ((tileMap.get(i).getId() / 100) % 10 != 0) {&#xD;
+                g.drawImage(imageList.get((tileMap.get(i).getId() / 100) % 10 * 4 - 2), (tileMap.get(i).getX() * imageList.get(0).getHeight()) + positionOnMap.x + 32, (tileMap.get(i).getY() * imageList.get(0).getWidth()) + positionOnMap.y, null);&#xD;
+            }&#xD;
+            if ((tileMap.get(i).getId() / 10) % 10 != 0) {&#xD;
+                g.drawImage(imageList.get((tileMap.get(i).getId() / 10) % 10 * 4 - 1), (tileMap.get(i).getX() * imageList.get(0).getHeight()) + positionOnMap.x, (tileMap.get(i).getY() * imageList.get(0).getWidth()) + positionOnMap.y + 32, null);&#xD;
+            }&#xD;
+            if (tileMap.get(i).getId() % 10 != 0) {&#xD;
+                g.drawImage(imageList.get(tileMap.get(i).getId() % 10 * 4), (tileMap.get(i).getX() * imageList.get(0).getHeight()) + positionOnMap.x, (tileMap.get(i).getY() * imageList.get(0).getWidth()) + positionOnMap.y, null);&#xD;
+            }&#xD;
+        } else {&#xD;
+            // Void&#xD;
+            System.out.print(&quot;No sprites found\n&quot;);&#xD;
+            g.setColor(new Color(0, 255, 0));&#xD;
+            g.fillRect((tileMap.get(i).getX() * 64) + positionOnMap.x, (tileMap.get(i).getY() * 64) + positionOnMap.y, 64, 64);&#xD;
+        }&#xD;
+    }&#xD;
+    /**
+		 * Displays the Tile that the player can place.
+		 */&#xD;
+    if (imageList.size() > 0) {&#xD;
+        g.drawImage(imageList.get(0), (positionOfCursor.x / imageList.get(0).getHeight()) * imageList.get(0).getHeight() + (positionOnMap.x % imageList.get(0).getHeight()), (positionOfCursor.y / imageList.get(0).getWidth()) * imageList.get(0).getWidth() + (positionOnMap.y % imageList.get(0).getWidth()), null);&#xD;
+        if (cursorTile / 1000 != 0) {&#xD;
+            g.drawImage(imageList.get(cursorTile / 1000 * 4 - 3), (positionOfCursor.x / imageList.get(0).getHeight()) * imageList.get(0).getHeight() + (positionOnMap.x % imageList.get(0).getHeight()), (positionOfCursor.y / imageList.get(0).getWidth()) * imageList.get(0).getWidth() + (positionOnMap.y % imageList.get(0).getWidth()), null);&#xD;
+        }&#xD;
+        if ((cursorTile / 100) % 10 != 0) {&#xD;
+            g.drawImage(imageList.get((cursorTile / 100) % 10 * 4 - 2), (positionOfCursor.x / imageList.get(0).getHeight()) * imageList.get(0).getHeight() + (positionOnMap.x % imageList.get(0).getHeight()) + 32, (positionOfCursor.y / imageList.get(0).getWidth()) * imageList.get(0).getWidth() + (positionOnMap.y % imageList.get(0).getWidth()), null);&#xD;
+        }&#xD;
+        if ((cursorTile / 10) % 10 != 0) {&#xD;
+            g.drawImage(imageList.get((cursorTile / 10) % 10 * 4 - 1), (positionOfCursor.x / imageList.get(0).getHeight()) * imageList.get(0).getHeight() + (positionOnMap.x % imageList.get(0).getHeight()), (positionOfCursor.y / imageList.get(0).getWidth()) * imageList.get(0).getWidth() + (positionOnMap.y % imageList.get(0).getWidth()) + 32, null);&#xD;
+        }&#xD;
+        if (cursorTile % 10 != 0) {&#xD;
+            g.drawImage(imageList.get(cursorTile % 10 * 4), (positionOfCursor.x / imageList.get(0).getHeight()) * imageList.get(0).getHeight() + (positionOnMap.x % imageList.get(0).getHeight()), (positionOfCursor.y / imageList.get(0).getWidth()) * imageList.get(0).getWidth() + (positionOnMap.y % imageList.get(0).getWidth()), null);&#xD;
+        }&#xD;
+    } else {&#xD;
+        // Void&#xD;
+        System.out.print(&quot;No sprites found\n&quot;);&#xD;
+        g.setColor(new Color(0, 255, 0));&#xD;
+        g.fillRect((positionOfCursor.x / 64 * 64) + positionOnMap.x % 64, (positionOfCursor.y / 64 * 64) + positionOnMap.y % 64, 64, 64);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_CL3wUO1oEey8sKoZGmg3BA" name="setTileMap" specification="_CL0tAO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.tileMap = tileMap;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_CL6MkO1oEey8sKoZGmg3BA" name="setCursorTile" specification="_CL4-cO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.cursorTile = cursorTile;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_CL9P4O1oEey8sKoZGmg3BA" name="setPositionOnMap" specification="_CL7asO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.positionOnMap = positionOnMap;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_CL_sIO1oEey8sKoZGmg3BA" name="setPositionOfCursor" specification="_CL928O1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.positionOfCursor = positionOfCursor;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_CLqU8O1oEey8sKoZGmg3BA" name="GameDisplay" visibility="private" method="_CLtYQO1oEey8sKoZGmg3BA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_CLxpsO1oEey8sKoZGmg3BA" name="paintComponent" visibility="protected" method="_CL0F8O1oEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_CLyQwO1oEey8sKoZGmg3BA" name="g" type="_CLumYO1oEey8sKoZGmg3BA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_CL0tAO1oEey8sKoZGmg3BA" name="setTileMap" visibility="public" method="_CL3wUO1oEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_CL17IO1oEey8sKoZGmg3BA" name="tileMap">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CL3JQO1oEey8sKoZGmg3BA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CL3JQe1oEey8sKoZGmg3BA" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_CL4-cO1oEey8sKoZGmg3BA" name="setCursorTile" visibility="public" method="_CL6MkO1oEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_CL5lgO1oEey8sKoZGmg3BA" name="cursorTile" type="_CLiZIO1oEey8sKoZGmg3BA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_CL7asO1oEey8sKoZGmg3BA" name="setPositionOnMap" visibility="public" method="_CL9P4O1oEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_CL8o0O1oEey8sKoZGmg3BA" name="positionOnMap"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_CL928O1oEey8sKoZGmg3BA" name="setPositionOfCursor" visibility="public" method="_CL_sIO1oEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_CL_FEO1oEey8sKoZGmg3BA" name="positionOfCursor"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Qx3wYO1oEey8sKoZGmg3BA" name="Initiator" visibility="public">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Qx8o4O1oEey8sKoZGmg3BA" name="main" specification="_Qx6zsO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    new FrameHandler();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Qx6zsO1oEey8sKoZGmg3BA" name="main" visibility="public" isStatic="true" method="_Qx8o4O1oEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Qx7awO1oEey8sKoZGmg3BA" name="args" type="_Qx4Xce1oEey8sKoZGmg3BA">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qx8B0O1oEey8sKoZGmg3BA"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qx8B0e1oEey8sKoZGmg3BA" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_T0xgsO1oEey8sKoZGmg3BA" name="PanelHandler" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_T00kAO1oEey8sKoZGmg3BA" general="_T0yHwO1oEey8sKoZGmg3BA"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T01LEO1oEey8sKoZGmg3BA" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" type="_87A6sO1nEey8sKoZGmg3BA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T02ZMO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T05cgO1oEey8sKoZGmg3BA" name="gDisplay" visibility="private" type="_CLLMwO1oEey8sKoZGmg3BA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T06DkO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new GameDisplay()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T09G4O1oEey8sKoZGmg3BA" name="score" visibility="private" type="_T06qoO1oEey8sKoZGmg3BA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T09t8O1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new JLabel(&quot;Score: 0&quot;)</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T0-VAO1oEey8sKoZGmg3BA" name="SCREEN_WIDTH" visibility="private" isLeaf="true" isStatic="true" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T0_jIO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>1240</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T1AKMO1oEey8sKoZGmg3BA" name="SCREEN_HEIGHT" visibility="private" isLeaf="true" isStatic="true" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T1BYUO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>720</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T1B_YO1oEey8sKoZGmg3BA" name="tileMap" visibility="private" isStatic="true" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T1DNgO1oEey8sKoZGmg3BA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T1DNge1oEey8sKoZGmg3BA" value="*"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T1D0kO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new ArrayList&lt;TileSet>()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T1EboO1oEey8sKoZGmg3BA" name="positionOnMap" visibility="private" isStatic="true" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T1FpwO1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Vector2D()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T1GQ0O1oEey8sKoZGmg3BA" name="positionOfCursor" visibility="private" isStatic="true" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_T1He8O1oEey8sKoZGmg3BA" name="defaultValue">
+              <language>JAVA</language>
+              <body>new Vector2D()</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T1IGAO1oEey8sKoZGmg3BA" name="cursorTileID" visibility="private" isStatic="true" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T1ItEO1oEey8sKoZGmg3BA" name="scoreValue" visibility="private" isStatic="true" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_T1MXcO1oEey8sKoZGmg3BA" name="random" visibility="private" type="_T1J7Me1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1QB0O1oEey8sKoZGmg3BA" name="PanelHandler" specification="_T1M-gO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    random = new Random();&#xD;
+    this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));&#xD;
+    this.setBackground(Color.BLACK);&#xD;
+    this.setFocusable(true);&#xD;
+    showMenu();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1RP8O1oEey8sKoZGmg3BA" name="showMenu" specification="_T1Qo4O1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    JLabel header = new JLabel(&quot;Carcassonne&quot;);&#xD;
+    JButton play = new JButton(&quot;PLAY GAME&quot;);&#xD;
+    JButton help = new JButton(&quot;HELP&quot;);&#xD;
+    JButton about = new JButton(&quot;ABOUT&quot;);&#xD;
+    JButton exit = new JButton(&quot;EXIT GAME&quot;);&#xD;
+    this.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));&#xD;
+    this.setLayout(new GridLayout(0, 1));&#xD;
+    header.setHorizontalAlignment(JLabel.CENTER);&#xD;
+    header.setFont(new Font(&quot;Germania One&quot;, Font.BOLD, 64));&#xD;
+    header.setForeground(Color.WHITE);&#xD;
+    this.add(header);&#xD;
+    this.add(play);&#xD;
+    this.add(help);&#xD;
+    this.add(about);&#xD;
+    this.add(exit);&#xD;
+    play.addActionListener( e -> {&#xD;
+        this.removeAll();&#xD;
+        this.invalidate();&#xD;
+        this.validate();&#xD;
+        startGame();&#xD;
+    });&#xD;
+    help.addActionListener( e -> {&#xD;
+        this.removeAll();&#xD;
+        this.invalidate();&#xD;
+        this.validate();&#xD;
+        showHelp();&#xD;
+    });&#xD;
+    about.addActionListener( e -> {&#xD;
+        this.removeAll();&#xD;
+        this.invalidate();&#xD;
+        this.validate();&#xD;
+        showAbout();&#xD;
+    });&#xD;
+    exit.addActionListener( e -> {&#xD;
+        System.exit(0);&#xD;
+    });&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1TFIO1oEey8sKoZGmg3BA" name="showHelp" specification="_T1SeEO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    JLabel header = new JLabel(&quot;Carcassonne&quot;);&#xD;
+    JLabel info = new JLabel(&quot;Filler Buster&quot;);&#xD;
+    JButton back = new JButton(&quot;GO BACK&quot;);&#xD;
+    this.setBorder(BorderFactory.createEmptyBorder(20, 100, 100, 100));&#xD;
+    this.setLayout(new GridLayout(0, 1));&#xD;
+    StringBuilder textString = new StringBuilder();&#xD;
+    textString.append(&quot;&lt;html>&quot;);&#xD;
+    textString.append(&quot;You start off with a single grass tile.&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Each time you place a tile, another random tile will appear in its place.&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Over time, you will create a unique world, spaning over hundreds of tiles&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Controls:&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;LMB to place tiles.&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;R to rotate tiles.&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;WASD to move around the map.&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;The rules are as follows:&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;1. Tiles must be placed next to each other&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;2. Place tiles with similar terrain to gain points&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;3. Have fun!&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;&lt;/html>&quot;);&#xD;
+    header.setFont(new Font(&quot;Germania One&quot;, Font.BOLD, 64));&#xD;
+    header.setForeground(Color.WHITE);&#xD;
+    info.setText(textString.toString());&#xD;
+    info.setForeground(Color.WHITE);&#xD;
+    this.add(header);&#xD;
+    this.add(info);&#xD;
+    this.add(back);&#xD;
+    back.addActionListener( e -> {&#xD;
+        this.removeAll();&#xD;
+        this.invalidate();&#xD;
+        this.validate();&#xD;
+        showMenu();&#xD;
+    });&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1U6UO1oEey8sKoZGmg3BA" name="showAbout" specification="_T1UTQO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    JLabel header = new JLabel(&quot;About&quot;);&#xD;
+    JLabel info = new JLabel(&quot;Filler Buster&quot;);&#xD;
+    JButton back = new JButton(&quot;GO BACK&quot;);&#xD;
+    this.setBorder(BorderFactory.createEmptyBorder(20, 100, 100, 100));&#xD;
+    this.setLayout(new GridLayout(0, 1));&#xD;
+    StringBuilder textString = new StringBuilder();&#xD;
+    textString.append(&quot;&lt;html>&quot;);&#xD;
+    textString.append(&quot;Stellar Games ist ein unabhaengiger Spieleentwickler,&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;welcher sich in Mobile Games und anderen diversen Spieleanwendungen spezialisiert hat.&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Im Betrieb befinden sich derzeit 5 Mitarbeiter.&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Credits:&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Projektleiter*in: Lisa Hauptvogel&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Dokumentation: Mariia Wuertz&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Dokumentation: Lloyd Koenig&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Versionierung: Dmitrij Kolosov&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;Programmierer*in: Noricia Matschuck&quot;);&#xD;
+    textString.append(&quot;&lt;br>&quot;);&#xD;
+    textString.append(&quot;&lt;/html>&quot;);&#xD;
+    header.setFont(new Font(&quot;Germania One&quot;, Font.BOLD, 64));&#xD;
+    header.setForeground(Color.WHITE);&#xD;
+    info.setText(textString.toString());&#xD;
+    info.setForeground(Color.WHITE);&#xD;
+    this.add(header);&#xD;
+    this.add(info);&#xD;
+    this.add(back);&#xD;
+    back.addActionListener( e -> {&#xD;
+        this.removeAll();&#xD;
+        this.invalidate();&#xD;
+        this.validate();&#xD;
+        showMenu();&#xD;
+    });&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1WIcO1oEey8sKoZGmg3BA" name="startGame" specification="_T1VhYO1oEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    JButton back = new JButton(&quot;GO BACK&quot;);&#xD;
+    this.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));&#xD;
+    this.setLayout(null);&#xD;
+    score.setFont(new Font(&quot;Germania One&quot;, Font.BOLD, 24));&#xD;
+    score.setForeground(Color.WHITE);&#xD;
+    score.setBounds(20, 20, 500, 20);&#xD;
+    back.setBounds(1100, 20, 120, 40);&#xD;
+    gDisplay.setBounds(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);&#xD;
+    gDisplay.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));&#xD;
+    gDisplay.setVisible(true);&#xD;
+    this.add(score, BorderLayout.WEST);&#xD;
+    this.add(back, BorderLayout.EAST);&#xD;
+    this.add(gDisplay);&#xD;
+    gDisplay.repaint();&#xD;
+    scoreValue = 0;&#xD;
+    cursorTileID = // North&#xD;
+    (random.nextInt(4) * 1000) + (// East&#xD;
+    random.nextInt(4) * // East&#xD;
+    100) + (// South&#xD;
+    random.nextInt(4) * // South&#xD;
+    10) + // West&#xD;
+    random.nextInt(// West&#xD;
+    4);&#xD;
+    tileMap.add(new TileSet(0, 0, 0));&#xD;
+    positionOnMap = new Vector2D((SCREEN_WIDTH - 64) / 2, (SCREEN_HEIGHT - 64) / 2);&#xD;
+    gDisplay.setCursorTile(cursorTileID);&#xD;
+    gDisplay.setTileMap(tileMap);&#xD;
+    gDisplay.setPositionOnMap(positionOnMap);&#xD;
+    this.addKeyListener(new EventHandler());&#xD;
+    this.addMouseListener(new MouseEventHandler());&#xD;
+    this.addMouseMotionListener(new MouseEventHandler());&#xD;
+    back.addActionListener( e -> {&#xD;
+        this.removeAll();&#xD;
+        tileMap.clear();&#xD;
+        this.invalidate();&#xD;
+        this.validate();&#xD;
+        showMenu();&#xD;
+    });&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_T1M-gO1oEey8sKoZGmg3BA" name="PanelHandler" visibility="private" method="_T1QB0O1oEey8sKoZGmg3BA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_T1Qo4O1oEey8sKoZGmg3BA" name="showMenu" visibility="public" method="_T1RP8O1oEey8sKoZGmg3BA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_T1SeEO1oEey8sKoZGmg3BA" name="showHelp" visibility="public" method="_T1TFIO1oEey8sKoZGmg3BA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_T1UTQO1oEey8sKoZGmg3BA" name="showAbout" visibility="public" method="_T1U6UO1oEey8sKoZGmg3BA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_T1VhYO1oEey8sKoZGmg3BA" name="startGame" visibility="public" method="_T1WIcO1oEey8sKoZGmg3BA"/>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_T1XWkO1oEey8sKoZGmg3BA" name="EventHandler" visibility="public">
+            <generalization xmi:type="uml:Generalization" xmi:id="_T1Zy0O1oEey8sKoZGmg3BA" general="_T1XWke1oEey8sKoZGmg3BA"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1eEQO1oEey8sKoZGmg3BA" name="keyPressed" specification="_T1c2IO1oEey8sKoZGmg3BA">
+              <language>JAVA</language>
+              <body>&#xD;
+    switch(e.getKeyCode()) {&#xD;
+        case KeyEvent.VK_A:&#xD;
+        case KeyEvent.VK_LEFT:&#xD;
+            {&#xD;
+                // Move left&#xD;
+                positionOnMap.x += 8;&#xD;
+                break;&#xD;
+            }&#xD;
+        case KeyEvent.VK_S:&#xD;
+        case KeyEvent.VK_DOWN:&#xD;
+            {&#xD;
+                // Move down&#xD;
+                positionOnMap.y -= 8;&#xD;
+                break;&#xD;
+            }&#xD;
+        case KeyEvent.VK_D:&#xD;
+        case KeyEvent.VK_RIGHT:&#xD;
+            {&#xD;
+                // Move right&#xD;
+                positionOnMap.x -= 8;&#xD;
+                break;&#xD;
+            }&#xD;
+        case KeyEvent.VK_W:&#xD;
+        case KeyEvent.VK_UP:&#xD;
+            {&#xD;
+                // Move up&#xD;
+                positionOnMap.y += 8;&#xD;
+                break;&#xD;
+            }&#xD;
+        case KeyEvent.VK_R:&#xD;
+            {&#xD;
+                // Rotate&#xD;
+                cursorTileID = ((cursorTileID / 10) + ((cursorTileID % 10) * 1000));&#xD;
+                gDisplay.setCursorTile(cursorTileID);&#xD;
+                break;&#xD;
+            }&#xD;
+    }&#xD;
+    repaint();&#xD;
+</body>
+            </ownedBehavior>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_T1c2IO1oEey8sKoZGmg3BA" name="keyPressed" visibility="public" method="_T1eEQO1oEey8sKoZGmg3BA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1ddMO1oEey8sKoZGmg3BA" name="e" type="_T1aZ4O1oEey8sKoZGmg3BA"/>
+            </ownedOperation>
+          </nestedClassifier>
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_T1erUO1oEey8sKoZGmg3BA" name="MouseEventHandler" visibility="public">
+            <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_T1huoO1oEey8sKoZGmg3BA" name="MouseEventHandler implements MouseListener" client="_T1erUO1oEey8sKoZGmg3BA" supplier="_T1fSYO1oEey8sKoZGmg3BA" contract="_T1fSYO1oEey8sKoZGmg3BA"/>
+            <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_T1kK4O1oEey8sKoZGmg3BA" name="MouseEventHandler implements MouseMotionListener" client="_T1erUO1oEey8sKoZGmg3BA" supplier="_T1iVsO1oEey8sKoZGmg3BA" contract="_T1iVsO1oEey8sKoZGmg3BA"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1ocUO1oEey8sKoZGmg3BA" name="mouseClicked" specification="_T1nOMO1oEey8sKoZGmg3BA">
+              <language>JAVA</language>
+              <body>&#xD;
+    if (e.getButton() == MouseEvent.BUTTON1) {&#xD;
+        int x = ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64;&#xD;
+        int y = ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64;&#xD;
+        if ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64) &lt; 0) {&#xD;
+            x--;&#xD;
+        }&#xD;
+        if ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64) &lt; 0) {&#xD;
+            y--;&#xD;
+        }&#xD;
+        // Place Tile&#xD;
+        boolean free = true;&#xD;
+        boolean adjacent = false;&#xD;
+        for (int i = 0; i &lt; tileMap.size(); i++) {&#xD;
+            if (x == tileMap.get(i).getX() &amp;&amp; y == tileMap.get(i).getY()) {&#xD;
+                free = false;&#xD;
+                break;&#xD;
+            }&#xD;
+            if (x == tileMap.get(i).getX() &amp;&amp; y == tileMap.get(i).getY() + 1 || x == tileMap.get(i).getX() &amp;&amp; y == tileMap.get(i).getY() - 1 || x == tileMap.get(i).getX() + 1 &amp;&amp; y == tileMap.get(i).getY() || x == tileMap.get(i).getX() - 1 &amp;&amp; y == tileMap.get(i).getY()) {&#xD;
+                if (x == tileMap.get(i).getX() &amp;&amp; y == tileMap.get(i).getY() + 1 &amp;&amp; cursorTileID / 1000 == (tileMap.get(i).getId() / 10) % 10) {&#xD;
+                    scoreValue += 5;&#xD;
+                }&#xD;
+                if (x == tileMap.get(i).getX() &amp;&amp; y == tileMap.get(i).getY() - 1 &amp;&amp; (cursorTileID / 10) % 10 == tileMap.get(i).getId() / 1000) {&#xD;
+                    scoreValue += 5;&#xD;
+                }&#xD;
+                if (x == tileMap.get(i).getX() + 1 &amp;&amp; y == tileMap.get(i).getY() &amp;&amp; cursorTileID % 10 == (tileMap.get(i).getId() / 100) % 10) {&#xD;
+                    scoreValue += 5;&#xD;
+                }&#xD;
+                if (x == tileMap.get(i).getX() - 1 &amp;&amp; y == tileMap.get(i).getY() &amp;&amp; (cursorTileID / 100) % 10 == tileMap.get(i).getId() % 10) {&#xD;
+                    scoreValue += 5;&#xD;
+                }&#xD;
+                adjacent = true;&#xD;
+            }&#xD;
+        }&#xD;
+        if (free == true &amp;&amp; adjacent == true) {&#xD;
+            tileMap.add(new TileSet(cursorTileID, x, y));&#xD;
+            cursorTileID = (// North&#xD;
+            random.nextInt(// North&#xD;
+            4) * 1000) + (// East&#xD;
+            random.nextInt(4) * 100) + // South&#xD;
+            (random.nextInt(4) * 10) + // West&#xD;
+            random.nextInt(4);&#xD;
+            score.setText(&quot;Score: &quot; + scoreValue);&#xD;
+            gDisplay.setCursorTile(cursorTileID);&#xD;
+            gDisplay.setTileMap(tileMap);&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1qRge1oEey8sKoZGmg3BA" name="mouseEntered" specification="_T1pqcO1oEey8sKoZGmg3BA">
+              <language>JAVA</language>
+              <body>&#xD;
+// TODO Auto-generated method stub&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1rfoe1oEey8sKoZGmg3BA" name="mouseExited" specification="_T1q4kO1oEey8sKoZGmg3BA">
+              <language>JAVA</language>
+              <body>&#xD;
+// TODO Auto-generated method stub&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1stwe1oEey8sKoZGmg3BA" name="mousePressed" specification="_T1sGsO1oEey8sKoZGmg3BA">
+              <language>JAVA</language>
+              <body>&#xD;
+// TODO Auto-generated method stub&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1vKAO1oEey8sKoZGmg3BA" name="mouseReleased" specification="_T1t74O1oEey8sKoZGmg3BA">
+              <language>JAVA</language>
+              <body>&#xD;
+// TODO Auto-generated method stub&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1xmQO1oEey8sKoZGmg3BA" name="mouseDragged" specification="_T1vxEO1oEey8sKoZGmg3BA">
+              <language>JAVA</language>
+              <body>&#xD;
+// TODO Auto-generated method stub&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_T1zbcO1oEey8sKoZGmg3BA" name="mouseMoved" specification="_T1yNUO1oEey8sKoZGmg3BA">
+              <language>JAVA</language>
+              <body>&#xD;
+    positionOfCursor.x = e.getPoint().x - (positionOnMap.x % 64);&#xD;
+    positionOfCursor.y = e.getPoint().y - (positionOnMap.y % 64);&#xD;
+    Vector2D oldPosition = new Vector2D(0, 0);&#xD;
+    gDisplay.setPositionOfCursor(positionOfCursor);&#xD;
+    // if mouse is on new tile -> refresh&#xD;
+    if ((((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64) - ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64) &lt; 0 ? 1 : 0) != oldPosition.x || (((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64) - ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64) &lt; 0 ? 1 : 0) != oldPosition.y || ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64 == 0 &amp;&amp; ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64 == 0) {&#xD;
+        oldPosition.x = ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64;&#xD;
+        oldPosition.y = ((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64;&#xD;
+        repaint();&#xD;
+    }&#xD;
+</body>
+            </ownedBehavior>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_T1nOMO1oEey8sKoZGmg3BA" name="mouseClicked" visibility="public" method="_T1ocUO1oEey8sKoZGmg3BA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1n1QO1oEey8sKoZGmg3BA" name="e" type="_T1kx8O1oEey8sKoZGmg3BA"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_T1pqcO1oEey8sKoZGmg3BA" name="mouseEntered" visibility="public" method="_T1qRge1oEey8sKoZGmg3BA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1qRgO1oEey8sKoZGmg3BA" name="arg0" type="_T1kx8O1oEey8sKoZGmg3BA"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_T1q4kO1oEey8sKoZGmg3BA" name="mouseExited" visibility="public" method="_T1rfoe1oEey8sKoZGmg3BA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1rfoO1oEey8sKoZGmg3BA" name="e" type="_T1kx8O1oEey8sKoZGmg3BA"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_T1sGsO1oEey8sKoZGmg3BA" name="mousePressed" visibility="public" method="_T1stwe1oEey8sKoZGmg3BA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1stwO1oEey8sKoZGmg3BA" name="e" type="_T1kx8O1oEey8sKoZGmg3BA"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_T1t74O1oEey8sKoZGmg3BA" name="mouseReleased" visibility="public" method="_T1vKAO1oEey8sKoZGmg3BA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1ui8O1oEey8sKoZGmg3BA" name="e" type="_T1kx8O1oEey8sKoZGmg3BA"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_T1vxEO1oEey8sKoZGmg3BA" name="mouseDragged" visibility="public" method="_T1xmQO1oEey8sKoZGmg3BA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1w_MO1oEey8sKoZGmg3BA" name="e" type="_T1kx8O1oEey8sKoZGmg3BA"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_T1yNUO1oEey8sKoZGmg3BA" name="mouseMoved" visibility="public" method="_T1zbcO1oEey8sKoZGmg3BA">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1y0YO1oEey8sKoZGmg3BA" name="e" type="_T1kx8O1oEey8sKoZGmg3BA"/>
+            </ownedOperation>
+          </nestedClassifier>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_T0yHwO1oEey8sKoZGmg3BA" name="JPanel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_T06qoO1oEey8sKoZGmg3BA" name="JLabel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_T1XWke1oEey8sKoZGmg3BA" name="KeyAdapter"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_T1aZ4O1oEey8sKoZGmg3BA" name="KeyEvent"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_T1fSYO1oEey8sKoZGmg3BA" name="MouseListener"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_T1iVsO1oEey8sKoZGmg3BA" name="MouseMotionListener"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_T1kx8O1oEey8sKoZGmg3BA" name="MouseEvent"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_FjbFgO1pEey8sKoZGmg3BA" name="Vector2D" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_FjbskO1pEey8sKoZGmg3BA" name="x" visibility="public" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Fjbske1pEey8sKoZGmg3BA" name="y" visibility="public" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_FjdhwO1pEey8sKoZGmg3BA" name="Vector2D" specification="_Fjbsku1pEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.x = 0;&#xD;
+    this.y = 0;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Fjf-Ae1pEey8sKoZGmg3BA" name="Vector2D" specification="_FjeI0O1pEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.x = x;&#xD;
+    this.y = y;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Fjbsku1pEey8sKoZGmg3BA" name="Vector2D" visibility="public" method="_FjdhwO1pEey8sKoZGmg3BA"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_FjeI0O1pEey8sKoZGmg3BA" name="Vector2D" visibility="public" method="_Fjf-Ae1pEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_FjfW8e1pEey8sKoZGmg3BA" name="x" type="_CLiZIO1oEey8sKoZGmg3BA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_Fjf-AO1pEey8sKoZGmg3BA" name="y" type="_CLiZIO1oEey8sKoZGmg3BA"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_JXf0EO1pEey8sKoZGmg3BA" name="TileSet" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_JXgbIO1pEey8sKoZGmg3BA" name="id" visibility="private" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_JXgbIe1pEey8sKoZGmg3BA" name="x" visibility="private" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_JXgbIu1pEey8sKoZGmg3BA" name="y" visibility="private" type="_CLiZIO1oEey8sKoZGmg3BA" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JXi3Yu1pEey8sKoZGmg3BA" name="TileSet" specification="_JXhCMO1pEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.id = id;&#xD;
+    this.x = x;&#xD;
+    this.y = y;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JXjece1pEey8sKoZGmg3BA" name="getId" specification="_JXi3Y-1pEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return id;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JXjedO1pEey8sKoZGmg3BA" name="getX" specification="_JXjecu1pEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return x;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JXkFgO1pEey8sKoZGmg3BA" name="getY" specification="_JXjede1pEey8sKoZGmg3BA">
+            <language>JAVA</language>
+            <body>&#xD;
+    return y;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_JXhCMO1pEey8sKoZGmg3BA" name="TileSet" visibility="public" method="_JXi3Yu1pEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JXiQUO1pEey8sKoZGmg3BA" name="id" type="_CLiZIO1oEey8sKoZGmg3BA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JXi3YO1pEey8sKoZGmg3BA" name="x" type="_CLiZIO1oEey8sKoZGmg3BA"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JXi3Ye1pEey8sKoZGmg3BA" name="y" type="_CLiZIO1oEey8sKoZGmg3BA"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_JXi3Y-1pEey8sKoZGmg3BA" name="getId" visibility="public" method="_JXjece1pEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JXjecO1pEey8sKoZGmg3BA" type="_CLiZIO1oEey8sKoZGmg3BA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_JXjecu1pEey8sKoZGmg3BA" name="getX" visibility="public" method="_JXjedO1pEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JXjec-1pEey8sKoZGmg3BA" type="_CLiZIO1oEey8sKoZGmg3BA" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_JXjede1pEey8sKoZGmg3BA" name="getY" visibility="public" method="_JXkFgO1pEey8sKoZGmg3BA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_JXjedu1pEey8sKoZGmg3BA" type="_CLiZIO1oEey8sKoZGmg3BA" direction="return"/>
+          </ownedOperation>
+          <nestedClassifier xmi:type="uml:Interface" xmi:id="_RUlmcO1pEey8sKoZGmg3BA" name="Interface12"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_85dbgO1nEey8sKoZGmg3BA" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_85eCkO1nEey8sKoZGmg3BA" name="javax">
+        <packagedElement xmi:type="uml:Package" xmi:id="_85eCke1nEey8sKoZGmg3BA" name="swing">
+          <packagedElement xmi:type="uml:Class" xmi:id="_85eCku1nEey8sKoZGmg3BA" name="JFrame"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_CLLz0O1oEey8sKoZGmg3BA" name="JLabel"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_87AToO1nEey8sKoZGmg3BA" name="primitivetype">
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_87A6sO1nEey8sKoZGmg3BA" name="Long"/>
+        <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_CLiZIO1oEey8sKoZGmg3BA" name="Integer"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_CLTIkO1oEey8sKoZGmg3BA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_CLTvoO1oEey8sKoZGmg3BA" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_CLTvoe1oEey8sKoZGmg3BA" name="awt">
+          <packagedElement xmi:type="uml:Package" xmi:id="_CLUWsO1oEey8sKoZGmg3BA" name="image">
+            <packagedElement xmi:type="uml:Class" xmi:id="_CLU9wO1oEey8sKoZGmg3BA" name="BufferedImage"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_CLumYO1oEey8sKoZGmg3BA" name="Graphics"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_Qx4XcO1oEey8sKoZGmg3BA" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_Qx4Xce1oEey8sKoZGmg3BA" name="String"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_T1J7MO1oEey8sKoZGmg3BA" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_T1J7Me1oEey8sKoZGmg3BA" name="Random"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_84rYYO1nEey8sKoZGmg3BA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_84t0oO1nEey8sKoZGmg3BA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_85Dy4O1nEey8sKoZGmg3BA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_85EZ8O1nEey8sKoZGmg3BA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_85FBAO1nEey8sKoZGmg3BA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_85FoEO1nEey8sKoZGmg3BA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_86vN4O1nEey8sKoZGmg3BA" name="javax.swing.JFrame" base_Classifier="_85eCku1nEey8sKoZGmg3BA"/>
+  <standard:Create xmi:id="_87KrsO1nEey8sKoZGmg3BA" base_BehavioralFeature="_87IPcO1nEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_CLOQEO1oEey8sKoZGmg3BA" name="javax.swing.JLabel" base_Classifier="_CLLz0O1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_CLWy8O1oEey8sKoZGmg3BA" name="java.awt.image.BufferedImage" base_Classifier="_CLU9wO1oEey8sKoZGmg3BA"/>
+  <standard:Create xmi:id="_CLsKIO1oEey8sKoZGmg3BA" base_BehavioralFeature="_CLqU8O1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_CLwbkO1oEey8sKoZGmg3BA" name="java.awt.Graphics" base_Classifier="_CLumYO1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_Qx5lkO1oEey8sKoZGmg3BA" name="java.lang.String" base_Classifier="_Qx4Xce1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T0zV4O1oEey8sKoZGmg3BA" name="JPanel" base_Classifier="_T0yHwO1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T04OYO1oEey8sKoZGmg3BA" name="GameDisplay" base_Classifier="_CLLMwO1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T074wO1oEey8sKoZGmg3BA" name="JLabel" base_Classifier="_T06qoO1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T1LwYO1oEey8sKoZGmg3BA" name="java.util.Random" base_Classifier="_T1J7Me1oEey8sKoZGmg3BA"/>
+  <standard:Create xmi:id="_T1OzsO1oEey8sKoZGmg3BA" base_BehavioralFeature="_T1M-gO1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T1ZLwO1oEey8sKoZGmg3BA" name="KeyAdapter" base_Classifier="_T1XWke1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T1boAO1oEey8sKoZGmg3BA" name="KeyEvent" base_Classifier="_T1aZ4O1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T1gggO1oEey8sKoZGmg3BA" name="MouseListener" base_Classifier="_T1fSYO1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T1jj0O1oEey8sKoZGmg3BA" name="MouseMotionListener" base_Classifier="_T1iVsO1oEey8sKoZGmg3BA"/>
+  <PapyrusJava:External xmi:id="_T1mAEO1oEey8sKoZGmg3BA" name="MouseEvent" base_Classifier="_T1kx8O1oEey8sKoZGmg3BA"/>
+  <standard:Create xmi:id="_Fjc6sO1pEey8sKoZGmg3BA" base_BehavioralFeature="_Fjbsku1pEey8sKoZGmg3BA"/>
+  <standard:Create xmi:id="_FjfW8O1pEey8sKoZGmg3BA" base_BehavioralFeature="_FjeI0O1pEey8sKoZGmg3BA"/>
+  <standard:Create xmi:id="_JXhpQO1pEey8sKoZGmg3BA" base_BehavioralFeature="_JXhCMO1pEey8sKoZGmg3BA"/>
+</xmi:XMI>
