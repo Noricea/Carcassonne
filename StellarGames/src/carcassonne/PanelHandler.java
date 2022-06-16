@@ -157,7 +157,7 @@ public class PanelHandler extends JPanel {
 
 		StringBuilder textString = new StringBuilder();
 		textString.append("<html>");
-		textString.append("Stellar Games ist ein unabhängiger Spieleentwickler,");
+		textString.append("Stellar Games ist ein unabhaengiger Spieleentwickler,");
 		textString.append("<br>");
 		textString.append("welcher sich in Mobile Games und anderen diversen Spieleanwendungen spezialisiert hat.");
 		textString.append("<br>");
@@ -168,9 +168,9 @@ public class PanelHandler extends JPanel {
 		textString.append("<br>");
 		textString.append("Projektleiter*in: Lisa Hauptvogel");
 		textString.append("<br>");
-		textString.append("Dokumentation: Mariia Würtz");
+		textString.append("Dokumentation: Mariia Wuertz");
 		textString.append("<br>");
-		textString.append("Dokumentation: Lloyd König");
+		textString.append("Dokumentation: Lloyd Koenig");
 		textString.append("<br>");
 		textString.append("Versionierung: Dmitrij Kolosov");
 		textString.append("<br>");
