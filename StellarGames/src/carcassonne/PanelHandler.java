@@ -154,6 +154,9 @@ public class PanelHandler extends JPanel {
 		});
 	}
 
+	/**
+	 * This is for displaying important information about the game developers, Stellar Games.
+	 */
 	public void showAbout() {
 		JLabel header = new JLabel("About");
 		JLabel info = new JLabel("Filler Buster");
@@ -259,9 +262,6 @@ public class PanelHandler extends JPanel {
 	/**
 	 * This is for moving the map if the space for the placed tiles is getting very
 	 * small.
-	 * 
-	 * @author Lisa
-	 *
 	 */
 	public class EventHandler extends KeyAdapter {
 		public void keyPressed(KeyEvent e) {
@@ -303,9 +303,6 @@ public class PanelHandler extends JPanel {
 
 	/**
 	 * This is for placing the tiles on the map via mouse click.
-	 * 
-	 * @author Lisa
-	 *
 	 */
 	public class MouseEventHandler implements MouseListener, MouseMotionListener {
 		public void mouseClicked(MouseEvent e) {
@@ -412,8 +409,10 @@ public class PanelHandler extends JPanel {
 
 			Vector2D oldPosition = new Vector2D(0, 0);
 			gDisplay.setPositionOfCursor(positionOfCursor);
-
-			// if mouse is on new tile -> refresh
+			
+			/**
+			 * If the mouse is on a new tile, refresh
+			 */
 			if ((((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64)) / 64)
 					- ((positionOfCursor.x - positionOnMap.x) + (positionOnMap.x % 64) < 0 ? 1 : 0) != oldPosition.x
 					|| (((positionOfCursor.y - positionOnMap.y) + (positionOnMap.y % 64)) / 64)

@@ -83,7 +83,9 @@ public class GameDisplay extends JLabel {
 							(tileMap.get(i).getY() * imageList.get(0).getWidth()) + positionOnMap.y, null);
 				}
 			} else {
-				// Void
+				/**
+				 * If the sprites cannot be loaded, the tiles will be displayed in the color green
+				 */
 				System.out.print("No sprites found\n");
 				g.setColor(new Color(0, 255, 0));
 				g.fillRect((tileMap.get(i).getX() * 64) + positionOnMap.x,
